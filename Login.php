@@ -1,43 +1,36 @@
-<!DOCTYPE html>
-<html lang="en" >
-<head>
-  <meta charset="UTF-8">
-  <title>Day 001 Login Form</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-	<form method="POST" action="checklogin.php">
-  <div class="login-wrap">
+<?php
+session_start();
+?>
 
-	<div class="login-html">
-		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
-		<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
-		<div class="login-form">
-			<div class="sign-in-htm">
-				<div class="group">
-					<label for="user" class="label">Username</label>
-					<input id="user" type="text" class="input" name="user">
-				</div>
-				<div class="group">
-					<label for="pass" class="label">Password</label>
-					<input id="pass" type="password" class="input" name="pass">
-				</div>
-				<div class="group">
-					<input id="check" type="checkbox" class="check" checked>
-					<label for="check"><span class="icon"></span> Keep me Signed in</label>
-				</div>
-				<div class="group">
-					<button type="submit" name="login" class="button">Login</button>
-				</div>
+<?php
+  //Gọi file connection.php ở bài trước
+  require_once'db.php';
+  // Kiểm tra nếu người dùng đã ân nút đăng nhập thì mới xử lý
+ 
+$sql0 = "SELECT * FROM administrator WHERE user = '".$_POST['user']."' and password = '".$_POST['pass']."'";
+$row0 = mysqli_query($conn, $sql0);
+$count0 = mysqli_num_rows($row0);
 
-				
 
-			</div>
-		</div>
-	</div>
-</div>
-</form>
-</body>
+$sql1 = "SELECT * FROM staff WHERE user = '".$_POST['user']."' and password = '".$_POST['pass']."'";
+$row1 = mysqli_query($conn, $sql1);
+$count1 = mysqli_num_rows($row1);
 
-</html>
+
+$sql2 = "SELECT * FROM trainer WHERE user = '".$_POST['user']."' and password = '".$_POST['pass']."'";
+$row2 = mysqli_query($conn, $sql2);
+$count2 = mysqli_num_rows($row2);
+
+
+if ($count0==1) {
+header('location:trangchu2.php');
+}
+else if ($count1==1) {
+  header('location:https://youtube.com');
+}else if ($count2==1) {
+  header('location:facebook.com');
+}else
+header('location:Login.php');
+
+
+?>
