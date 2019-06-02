@@ -3,7 +3,6 @@ session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -15,13 +14,8 @@ session_start();?>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
-
-
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-
-
-
 
 
 <div id="myCarousel" class="carousel slide" data-ride="carousel">

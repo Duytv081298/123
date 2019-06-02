@@ -29,7 +29,6 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   display: block;
 }
 .dropdown-content a:hover {background-color: #f1f1f1}
-
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -38,7 +37,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+  <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
   <span class="w3-bar-item w3-right"><?php echo $_SESSION['user'];  ?></span>
 </div>
 
@@ -52,7 +51,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       <span>Welcome, <strong>Manage</strong></span><br>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
-      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
+      <a href="ModifyStaffProfile.php" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
     </div>
   </div>
   <hr>
@@ -61,9 +60,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <div class="w3-bar-block">
     
-    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
 
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
+    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
 
 <div class="dropdown">
     <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf02d;</i> Manage Course  <i class="fa customer-right-icons">&#xf0d7;</i></a>
@@ -94,7 +93,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </div>
 
 <div class="dropdown">
-  <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Manage Trainee  <i class="fa customer-right-icons">&#xf0d7;</i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Manage Trainee  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
         <a class="target  sub-nav-customer " href="addTrainee.php" ><i  class="fa icons">&#xf067;</i>Add Trainee</a>
@@ -103,7 +102,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 </div>
 
 <div class="dropdown">
-  <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf007;</i>  Manage Trainer's profile  <i class="fa customer-right-icons">&#xf0d7;</i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf007;</i>  Manage Trainer's profile  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
       <a class="target  sub-nav-customer " href="addTrainer.php" ><i  class="fa icons">&#xf067;</i>Add Trainer</a>
@@ -229,10 +228,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <script>
 // Get the Sidebar
 var mySidebar = document.getElementById("mySidebar");
-
 // Get the DIV with overlay effect
 var overlayBg = document.getElementById("myOverlay");
-
 // Toggle between showing and hiding the sidebar, and add overlay effect
 function w3_open() {
   if (mySidebar.style.display === 'block') {
@@ -243,7 +240,6 @@ function w3_open() {
     overlayBg.style.display = "block";
   }
 }
-
 // Close the sidebar with the close button
 function w3_close() {
   mySidebar.style.display = "none";
