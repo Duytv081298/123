@@ -4,39 +4,36 @@
 	<title></title>
 </head>
 <body>
-		<div class="content" style="padding: 50px 200px 50px 200px">
+<?php 
 
-<div class="container" >
+require_once'db1.php';
 
-<table style="margin-bottom: 30px; margin-top: 30px;">
-			 <tr>
-  <td rowspan="3">Modify Course</td>
-    <td style="    padding-right: 20px;"><b>Course's NAME:   </b></td>
-    <td style="font-size: 20px">Load database</td>
-    
-  </tr>
-  <tr>
-    <td style="    padding-right: 20px;"><b>Course's Catagory </b></td>
-    <td style="font-size: 20px">Load database</td>
-  </tr>
-
-   <tr>
-    <td style="    padding-right: 25px; color: red;"><b>Course's Detail    </b></td>
-    <td style="font-size: 20px">Load database</td>
-  </tr>
+$idcourse = $_GET["idcourse"];
+$sql = "SELECT * FROM course where idcourse ='".$idcourse . "'";
+$result = $conn->query($sql);
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+    	?>
+	
 
 
-  <tr><td></td>
-  	<td><br><button onclick="show()" style="width: 100px;color: white">BUY NOW</button></td>
-                      </tr>
-                    
-                     
-</table>
-<script type="text/javascript">
-                        function show(){
-                          alert("Buying Successful!");
-                        }
-                    </script>
-</div>
+			<div class="oneproduct">
+				<a class="hinhproduct" href="modifyCourseDetail.php?idcourse=<?php echo $row["idcourse"]?>">
+					
+				    	<p>Name <?php echo $row["name"]?> % </p>
+				    	<p>ONLY 
+				    		<?php echo $row["topics"]?>
+				    	</p>
+
+				</a>
+				
+			</div>
+
+<?php
+	}
+}
+?>
+
 </body>
 </html>

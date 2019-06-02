@@ -37,7 +37,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right">Staff's Name Haha</span>
+  <span class="w3-bar-item w3-right">Training staff Haha</span>
 </div>
 
 <!-- Sidebar/menu -->
@@ -64,36 +64,51 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Overview</a>
 
 <div class="dropdown">
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf007;</i> Manage Course  <i class="fa customer-right-icons">&#xf0d7;</i></a>
+    <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf02d;</i> Manage Course  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
         <a class="target  sub-nav-customer " href="addCourse.php" ><i  class="fa icons">&#xf067;</i>Add Course</a>
         <a class=" sub-nav-customer" href="modifyCourse.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Course</a>
-        <a class=" sub-nav-customer"  href="#"><i class="fa icons">&#xf2bd;</i>Course Profile</a>
       </div>
   </div>
 
 <div class="dropdown">
-  <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i> Manage Topics  <i class="fa customer-right-icons">&#xf0d7;</i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf2b9;</i> Manage Topics  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
         <a class="target  sub-nav-customer " href="addTopic.php" ><i  class="fa icons">&#xf067;</i>Add Topic</a>
-        <a class=" sub-nav-customer" href="#" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Topic</a>
-        <a class=" sub-nav-customer"  href="#"><i class="fa icons">&#xf2bd;</i>Course Profile</a>
+        <a class=" sub-nav-customer" href="modifyTopic.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Topic</a>
       </div>
 </div>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bullseye fa-fw"></i>  Manage Course Catagories</a>
+
 
 <div class="dropdown">
-  <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-diamond fa-fw"></i>  Manage Trainee  <i class="fa customer-right-icons">&#xf0d7;</i></a>
+  <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf03b;</i> Manage Course Catagories  <i class="fa customer-right-icons">&#xf0d7;</i></a>
+
+    <div class="dropdown-content">
+        <a class="target  sub-nav-customer " href="addCatagory.php" ><i  class="fa icons">&#xf067;</i>Add Catagory</a>
+        <a class=" sub-nav-customer" href="modifyCatagory.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Catagory</a>
+      </div>
+</div>
+
+<div class="dropdown">
+  <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Manage Trainee  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
         <a class="target  sub-nav-customer " href="addTrainee.php" ><i  class="fa icons">&#xf067;</i>Add Trainee</a>
         <a class=" sub-nav-customer" href="#" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Trainee</a>
-        <a class=" sub-nav-customer"  href="#"><i class="fa icons">&#xf2bd;</i>Trainee Profile</a>
       </div>
 </div>
-    <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-bell fa-fw"></i>  Manage Trainer's profile</a>
+
+<div class="dropdown">
+  <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf007;</i>  Manage Trainer's profile  <i class="fa customer-right-icons">&#xf0d7;</i></a>
+
+    <div class="dropdown-content">
+      <a class="target  sub-nav-customer " href="addTrainer.php" ><i  class="fa icons">&#xf067;</i>Add Trainer</a>
+        <a class=" sub-nav-customer" href="modyfyTrainer.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Trainer's profile</a>
+      </div>
+</div>
+
     <br><br>
   
 </div>
@@ -114,7 +129,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-row-padding w3-margin-bottom">
     <div class="w3-quarter">
       <div class="w3-container w3-red w3-padding-16">
-        <div class="w3-left"><i class="fa fa-comment w3-xxxlarge"></i></div>
+        <div class="w3-left"><i class="fa fa-book w3-xxxlarge"></i></div>
         <div class="w3-right">
           <h3>52</h3>
         </div>
@@ -124,7 +139,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
     <div class="w3-quarter">
       <div class="w3-container w3-blue w3-padding-16">
-        <div class="w3-left"><i class="fa fa-eye w3-xxxlarge"></i></div>
+        <div class="w3-left"><i class="fa fa-address-book-o w3-xxxlarge"></i></div>
         <div class="w3-right">
           <h3>99</h3>
         </div>
@@ -134,7 +149,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
     <div class="w3-quarter">
       <div class="w3-container w3-teal w3-padding-16">
-        <div class="w3-left"><i class="fa fa-share-alt w3-xxxlarge"></i></div>
+        <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
         <div class="w3-right">
           <h3>23</h3>
         </div>
@@ -203,127 +218,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
   </div>
   <hr>
-  <div class="w3-container">
-    <h5>General Stats</h5>
-    <p>New Visitors</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-green" style="width:25%">+25%</div>
-    </div>
-
-    <p>New Users</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-orange" style="width:50%">50%</div>
-    </div>
-
-    <p>Bounce Rate</p>
-    <div class="w3-grey">
-      <div class="w3-container w3-center w3-padding w3-red" style="width:75%">75%</div>
-    </div>
+  
   </div>
-  <hr>
-
-  <div class="w3-container">
-    <h5>Countries</h5>
-    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
-      <tr>
-        <td>United States</td>
-        <td>65%</td>
-      </tr>
-      <tr>
-        <td>UK</td>
-        <td>15.7%</td>
-      </tr>
-      <tr>
-        <td>Russia</td>
-        <td>5.6%</td>
-      </tr>
-      <tr>
-        <td>Spain</td>
-        <td>2.1%</td>
-      </tr>
-      <tr>
-        <td>India</td>
-        <td>1.9%</td>
-      </tr>
-      <tr>
-        <td>France</td>
-        <td>1.5%</td>
-      </tr>
-    </table><br>
-    <button class="w3-button w3-dark-grey">More Countries  <i class="fa fa-arrow-right"></i></button>
-  </div>
-  <hr>
-  <div class="w3-container">
-    <h5>Recent Users</h5>
-    <ul class="w3-ul w3-card-4 w3-white">
-      <li class="w3-padding-16">
-        <img src="/w3images/avatar2.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Mike</span><br>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/avatar5.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Jill</span><br>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/w3images/avatar6.png" class="w3-left w3-circle w3-margin-right" style="width:35px">
-        <span class="w3-xlarge">Jane</span><br>
-      </li>
-    </ul>
-  </div>
-  <hr>
-
-  <div class="w3-container">
-    <h5>Recent Comments</h5>
-    <div class="w3-row">
-      <div class="w3-col m2 text-center">
-        <img class="w3-circle" src="/w3images/avatar3.png" style="width:96px;height:96px">
-      </div>
-      <div class="w3-col m10 w3-container">
-        <h4>John <span class="w3-opacity w3-medium">Sep 29, 2014, 9:12 PM</span></h4>
-        <p>Keep up the GREAT work! I am cheering for you!! Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
-      </div>
-    </div>
-
-    <div class="w3-row">
-      <div class="w3-col m2 text-center">
-        <img class="w3-circle" src="/w3images/avatar1.png" style="width:96px;height:96px">
-      </div>
-      <div class="w3-col m10 w3-container">
-        <h4>Bo <span class="w3-opacity w3-medium">Sep 28, 2014, 10:15 PM</span></h4>
-        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
-      </div>
-    </div>
-  </div>
-  <br>
-  <div class="w3-container w3-dark-grey w3-padding-32">
-    <div class="w3-row">
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-green">Demographic</h5>
-        <p>Language</p>
-        <p>Country</p>
-        <p>City</p>
-      </div>
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-red">System</h5>
-        <p>Browser</p>
-        <p>OS</p>
-        <p>More</p>
-      </div>
-      <div class="w3-container w3-third">
-        <h5 class="w3-bottombar w3-border-orange">Target</h5>
-        <p>Users</p>
-        <p>Active</p>
-        <p>Geo</p>
-        <p>Interests</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <footer class="w3-container w3-padding-16 w3-light-grey">
-    <h4>FOOTER</h4>
-    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-  </footer>
 
   <!-- End page content -->
 </div>
