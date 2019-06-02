@@ -8,7 +8,7 @@ session_start();?>
 <body>
 
 					<p>
-						<?php echo $_SESSION['user'];  ?>
+						dsaas <?php echo $_SESSION['user'];  ?>
 					</p>
 					
 
