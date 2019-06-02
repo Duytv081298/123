@@ -70,11 +70,13 @@ button:hover {
     <p>Please fill in this form to add course.</p>
     <hr>
 
-    <label for="courseCatalogy"><b>Course's Catagory</b></label>
-    <input type="text" placeholder="Enter Course's Catagory" name="courseCatalogy" required>
 
     <label for="courseName"><b>Course's name</b></label> 
     <input type="text" placeholder="Enter Course's name" name="courseName" required>
+
+    <label for="courseCatalogy"><b>Course's Catagory</b></label>
+    <input type="text" placeholder="Enter Course's Catagory" name="courseCatalogy" required>
+
 
     <label for="courseDetail"><b>Course's Detail </b></label>
     <input type="text" placeholder="Enter Course's Detail" name="courseDetail" required>

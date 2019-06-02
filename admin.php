@@ -1,3 +1,5 @@
+<?php
+session_start();?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -111,7 +113,9 @@
 <a href="">
 <div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
    <div class="container">
-  <div class="overlay">My Name admin</div> 
+  <div class="overlay"><span style="color: white">
+            <?php echo $_SESSION['user'];  ?>
+          </span></div> 
   <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
        <b><h1>User Profile</h1></b><br>
       <img src="img/admin.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
