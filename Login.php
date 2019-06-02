@@ -23,7 +23,7 @@ if ($count0==1) {
 header('location:abc.php');
 }
 else if ($count1==1) {
-  header('location:https://youtube.com');
+  header('location:Staff.php');
 }else if ($count2==1) {
   header('location:facebook.com');
 }else
