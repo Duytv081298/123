@@ -130,7 +130,7 @@ session_start();?>
    <div class="container">
   <div class="overlay">Detail</div> 
   <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
-       <b><h1>Management Staff</h1></b><br>
+       <b><h1>Manage Trainer Staffs</h1></b><br>
       <img src="img/staff.jpg" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
 </div>
 </div>
@@ -143,7 +143,7 @@ session_start();?>
    <div class="container">
   <div class="overlay">Detail</div> 
   <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
-       <b><h1>Management Staff</h1></b><br>
+       <b><h1>Manage Training Staffs</h1></b><br>
       <img src="img/trainer.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
 </div>
 </div>
