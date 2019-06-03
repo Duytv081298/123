@@ -1,3 +1,19 @@
+<?php
+  // Create database connection
+  $db = mysqli_connect("localhost", "root", "", "website");
+
+  // If upload button is clicked ...
+  if (isset($_POST['upload'])) {
+    // Get text
+    $categoryname = mysqli_real_escape_string($db, $_POST['categoryname']);
+    $description = mysqli_real_escape_string($db, $_POST['description']);
+
+    $sql = "INSERT INTO  categorycourse (categoryname, description) VALUES ('$categoryname', '$description')";
+    // execute query
+    mysqli_query($db, $sql);
+  }
+
+?>
 <!DOCTYPE html>
 <html>
 <style>

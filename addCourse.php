@@ -64,7 +64,7 @@ button:hover {
 <body>
 	<div class="content" style="padding: 50px 200px 50px 200px">
 
-<form action="/action_page.php" style="border:1px solid #ccc">
+<form action="addCourse.php" style="border:1px solid #ccc">
   <div class="container">
     <h1>Add Course</h1>
     <p>Please fill in this form to add course.</p>

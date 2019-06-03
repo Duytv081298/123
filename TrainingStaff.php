@@ -45,10 +45,10 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
-      <img src="/w3images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
+      <img src="images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
     </div>
     <div class="w3-col s8 w3-bar">
-      <span>Welcome, <strong>Manage</strong></span><br>
+      <span>Welcome, <strong><?php echo $_SESSION['user'];  ?></strong></span><br>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="ModifyStaffProfile.php" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -174,7 +174,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-third">
         <h5>Regions</h5>
-        <img src="img/region.jpg" style="width:100%" alt="Google Regional Map">
+        <img src="images/region.jpg" style="width:100%" alt="Google Regional Map">
       </div>
       <div class="w3-twothird">
         <h5>Feeds</h5>

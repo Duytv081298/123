@@ -30,7 +30,7 @@ session_start();?>
     <div class="carousel-inner">
 
       <div class="item active">
-        <img src="img/la.jpg" alt="Los Angeles" style="width:100%;">
+        <img src="images/la.jpg" alt="Los Angeles" style="width:100%;">
         <div class="carousel-caption">
           <h1>FPT SOFTWARE</h1>
           <p>Your time is limited, so don't waste it living someone else's life</p>
@@ -38,7 +38,7 @@ session_start();?>
       </div>
 
       <div class="item">
-        <img src="img/chicago.jpg" alt="Chicago" style="width:100%;">
+        <img src="images/chicago.jpg" alt="Chicago" style="width:100%;">
         <div class="carousel-caption">
           <h1>ARTIFICIAL INTELLIGENCE</h1>
           <p>AI has become an essential part of the technology industry</p>
@@ -46,7 +46,7 @@ session_start();?>
       </div>
     
       <div class="item">
-        <img src="img/ny.jpg" alt="New York" style="width:100%;">
+        <img src="images/ny.jpg" alt="New York" style="width:100%;">
         <div class="carousel-caption">
           <h1>GREENWICH UNIVERSITY</h1>
           <p>Wisdom is not a product from school, but a lifelong learning process</p>
@@ -112,7 +112,7 @@ session_start();?>
           </span></div> 
   <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
        <b><h1>User Profile</h1></b><br>
-      <img src="img/admin.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
+      <img src="images/admin.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
 </div>
 </div>
 </div>
@@ -125,7 +125,7 @@ session_start();?>
   <div class="overlay">Detail</div> 
   <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
        <b><h1>Manage Trainer Staffs</h1></b><br>
-      <img src="img/staff.jpg" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
+      <img src="images/staff.jpg" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
 </div>
 </div>
 </div>
@@ -138,7 +138,7 @@ session_start();?>
   <div class="overlay">Detail</div> 
   <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
        <b><h1>Manage Training Staffs</h1></b><br>
-      <img src="img/trainer.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
+      <img src="images/trainer.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
 </div>
 </div>
 </div>

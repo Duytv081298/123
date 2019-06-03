@@ -1,53 +1,43 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
-<html>
+<html lang="en" >
 <head>
-<title>Get data</title>
- 
+  <meta charset="UTF-8">
+  <title>Day 001 Login Form</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <form method="POST" action="Checklogin.php">
+  <div class="login-wrap">
 
-<?php
-  //Gọi file connection.php ở bài trước
-  require_once'db.php';
-  // Kiểm tra nếu người dùng đã ân nút đăng nhập thì mới xử lý
-  if(isset($_POST['user'])&& isset($_POST['pass'])) {
-    // lấy thông tin người dùng
-    $user = $_POST["user"];
-    $pass = $_POST["pass"];
-    //làm sạch thông tin, xóa bỏ các tag html, ký tự đặc biệt 
-    //mà người dùng cố tình thêm vào để tấn công theo phương thức sql injection
-    $user = strip_tags($user);
-    $user = addslashes($user);
-    $pass = strip_tags($pass);
-    $pass = addslashes($pass);
+    <div class="login-html">
+        <input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" class="tab">Sign In</label>
+        <input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2" class="tab">Sign Up</label>
+        <div class="login-form">
+            <div class="sign-in-htm">
+                <div class="group">
+                    <label for="user" class="label">Username</label>
+                    <input id="user" type="text" class="input" name="user">
+                </div>
+                <div class="group">
+                    <label for="pass" class="label">Password</label>
+                    <input id="pass" type="password" class="input" name="pass">
+                </div>
+                <div class="group">
+                    <input id="check" type="checkbox" class="check" checked>
+                    <label for="check"><span class="icon"></span> Keep me Signed in</label>
+                </div>
+                <div class="group">
+                    <button type="submit" name="login" class="button">Login</button>
+                </div>
 
-	$sql1 = "select * from administrator where user = '$user' and pass = '$pass' ";
-    $row1=query($sql1);
+                
 
-    $sql2 = "select * from staff where user = '$user' and pass = '$pass' ";
-    $row2=query($sql2);
-
-    $sql3 = "select * from trainer where user = '$user' and pass = '$pass' ";
-    $row3=query($sql3);
-
-    if ($row1==true) {
-        $_SESSION['user'] = $user;
-        header('Location: admin.php');
-    }else if($row2==true) {
-        $_SESSION['user'] = $user;
-        header('Location: Staff.php');
-    } else if($row3==true) {
-        $_SESSION['user'] = $user;
-        header('Location: trainer.php');
-    } else
-    header('location:Login.php');
-    
-  }
-?>
-
+            </div>
+        </div>
+    </div>
+</div>
+</form>
 </body>
+
 </html>
