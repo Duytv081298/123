@@ -25,7 +25,7 @@ session_start();
     $pass = strip_tags($pass);
     $pass = addslashes($pass);
 
-	$sql1 = "select * from administrator where user = '$user' and pass = '$pass' ";
+	$sql1 = "select * from admin where user = '$user' and pass = '$pass' ";
 	$result1 = $conn-> query($sql1);
 	$row1 = $result1->fetch_assoc();
 
