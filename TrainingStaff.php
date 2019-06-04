@@ -1,11 +1,14 @@
 <?php
-session_start();?>
+session_start();
+$name = $_SESSION['name'];
+?>
 <!DOCTYPE html>
 <html>
 <title>Manage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/font.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -38,7 +41,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
   <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey" onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
-  <span class="w3-bar-item w3-right"><?php echo $name;  ?></span>
+  <a href="Logout.php" style="text-decoration: none"><span class="w3-bar-item w3-right hvr-trim button" style="background: black; color: white">Log out</span></a>
 </div>
 
 <!-- Sidebar/menu -->
@@ -47,8 +50,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-col s4">
       <img src="images/avatar2.png" class="w3-circle w3-margin-right" style="width:46px">
     </div>
-    <div class="w3-col s8 w3-bar">
-      <span>Welcome, <strong><?php echo $name;  ?></strong></span><br>
+    <div class="w3-col s8 w3-bar ">
+      <span class="hvr-grow button">Welcome, <strong><?php echo $name;  ?></strong></span><br>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button"><i class="fa fa-user"></i></a>
       <a href="ModifyStaffProfile.php" class="w3-bar-item w3-button"><i class="fa fa-cog"></i></a>
@@ -123,46 +126,78 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
   <!-- Header -->
-  <header class="w3-container" style="padding-top:22px">
+  <header class="w3-container hvr-bounce-in button" style="padding-top:22px">
     <h5><b><i class="fa fa-dashboard"></i> My Dashboard</b></h5>
   </header>
 
   <div class="w3-row-padding w3-margin-bottom">
-    <div class="w3-quarter">
+   
+    <div class="w3-quarter hvr-wobble-vertical">      
       <div class="w3-container w3-red w3-padding-16">
+
         <div class="w3-left"><i class="fa fa-book w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>52</h3>
+          <h3><?php 
+              require_once'db.php';
+              $sql4 = "select idcourse from course";
+              $result4 = $conn-> query($sql4);
+              $row4 = mysqli_num_rows($result4);
+              echo $row4;
+              ?>
+                
+          </h3>
         </div>
-        <div class="w3-clear"></div>
+
+        <div class="w3-clear" ></div>
         <h4>Courses</h4>
-      </div>
     </div>
-    <div class="w3-quarter">
+  </div>
+
+
+
+    <div class="w3-quarter hvr-wobble-vertical">
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-address-book-o w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>99</h3>
+          <h3><?php 
+              require_once'db.php';
+              $sql4 = "select idtopic from topic";
+              $result4 = $conn-> query($sql4);
+              $row4 = mysqli_num_rows($result4);
+              echo $row4;
+              ?></h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Topics</h4>
       </div>
     </div>
-    <div class="w3-quarter">
+    <div class="w3-quarter hvr-wobble-vertical">
       <div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>23</h3>
+          <h3><?php 
+              require_once'db.php';
+              $sql4 = "select idtrainer from trainer";
+              $result4 = $conn-> query($sql4);
+              $row4 = mysqli_num_rows($result4);
+              echo $row4;
+              ?></h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Trainers</h4>
       </div>
     </div>
-    <div class="w3-quarter">
+    <div class="w3-quarter hvr-wobble-vertical">
       <div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
         <div class="w3-right">
-          <h3>50</h3>
+          <h3><?php 
+              require_once'db.php';
+              $sql4 = "select idtrainee from trainee";
+              $result4 = $conn-> query($sql4);
+              $row4 = mysqli_num_rows($result4);
+              echo $row4;
+              ?></h3>
         </div>
         <div class="w3-clear"></div>
         <h4>Trainees</h4>

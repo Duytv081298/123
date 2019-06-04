@@ -13,6 +13,18 @@
     {
         header('Location: Admin.php');
     }
+
+    if ($_SESSION['logged_in'] && $_SESSION['role'] =='staff')
+    {
+        header('Location: TrainingStaff.php');
+    }
+
+    if ($_SESSION['logged_in'] && $_SESSION['role'] =='trainer')
+    {
+        header('Location: TrainerStaff.php');
+    }
+
+
 }
 ?>
 <body>

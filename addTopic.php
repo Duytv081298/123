@@ -73,10 +73,10 @@ button:hover {
     <input type="text" placeholder="Enter Topic's Catagory" name="courseCatalogy" required>
 
     <label for="courseName"><b>Topic's name</b></label> 
-    <input type="text" placeholder="Enter Topic's name" name="courseName" required>
+    <input type="text" placeholder="Enter Topic's name" name="topicName" required>
 
     <label for="courseDetail"><b>Topic's Detail </b></label>
-    <input type="text" placeholder="Enter Topic's Detail" name="courseDetail" required>
+    <input type="text" placeholder="Enter Topic's Detail" name="topicDetail" required>
     
     
 

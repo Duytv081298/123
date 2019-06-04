@@ -44,9 +44,13 @@ session_start();
         header('Location: Admin.php');
     }else if($row2==true) {
         $_SESSION['name'] = $row2['name'];
+        $_SESSION['logged_in'] = TRUE;
+        $_SESSION['role'] = 'staff';
         header('Location: TrainingStaff.php');
     } else if($row3==true) {
         $_SESSION['name'] = $row3['name'];
+        $_SESSION['logged_in'] = TRUE;
+        $_SESSION['role'] = 'trainer';
         header('Location: TrainerStaff.php');
     } else
     header('location:Login.php');

@@ -1,39 +1,68 @@
+
+
+       
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+	<title>Table V01</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-<?php 
-
-require_once'db1.php';
-
-$idcourse = $_GET["idcourse"];
-$sql = "SELECT * FROM course where idcourse ='".$idcourse . "'";
-$result = $conn->query($sql);
-if ($result->num_rows > 0) {
-    // output data of each row
-    while($row = $result->fetch_assoc()) {
-    	?>
 	
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+					<table>
+						<thead>
+							<tr class="table100-head">
+								<th class="column1">ID Course</th>
+								<th class="column2">Course's Name</th>
+								<th class="column3">Course's Description</th>
+								<th class="column4">Topic</th>
+								<th class="column5">Update</th>
+								<th class="column6">Delete</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+					<?php 
+							require_once'db.php';
 
+							$sql = "SELECT * FROM course ";
 
-			<div class="oneproduct">
-				<a class="hinhproduct" href="modifyCourseDetail.php?idcourse=<?php echo $row["idcourse"]?>">
-					
-				    	<p>Name <?php echo $row["name"]?> % </p>
-				    	<p>ONLY 
-				    		<?php echo $row["topics"]?>
-				    	</p>
+							$result = $conn->query($sql);
+							if ($result->num_rows > 0) {
+							    // output data of each row
+							    while($row = $result->fetch_assoc()) {
+							    	?>
+								<tr>
+									<td class="column1"><?php echo $row["idcourse"]?></td>
+									<td class="column2"><?php echo $row["name"]?></td>
+									<td class="column3"><?php echo $row["description"]?></td>
+									<td class="column4"><?php echo $row["name"]?></td>
+									<td class="column5"><button>Update</button></td>
+									<td class="column6"><button>Delete</button></td>
+									
+								</tr>
 
-				</a>
-				
+					<?php
+									}
+									}
+									?>
+																	
+						</tbody>
+					</table>
+				</div>
 			</div>
+		</div>
+	</div>
 
-<?php
-	}
-}
-?>
 
 </body>
 </html>

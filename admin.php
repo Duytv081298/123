@@ -14,6 +14,7 @@ $name = $_SESSION['name'];
   <link rel="stylesheet" href="css/style_admin.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover.css">
 </head>
 
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
@@ -73,13 +74,13 @@ $name = $_SESSION['name'];
 	  	<h3 style="margin: 20PX">Can anything be sadder than work left unfinished ?</h3>
 	  	<h1 >YES, WORK NEVER BEGUN - CHRISTINA ROSSETTI</h1>	
 	    <div class="w3-padding-32">
-	      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" style=" margin: 5px;
-	      padding: 7px">Name</button>
-	      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey"  style=" margin: 5px;
+	      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey hvr-wobble-vertical" style=" margin: 5px;
+	      padding: 7px">WelCome</button>
+	      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey hvr-wobble-vertical"  style=" margin: 5px;
 	      padding: 7px">About</button>
-	      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" style=" margin: 5px;
+	      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey hvr-wobble-vertical" style=" margin: 5px;
 	      padding: 7px">Home</button>
-	      <a href="Logout.php"><button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey"  style=" margin: 5px; padding: 7px; ">Logout</button></a>
+	      <a href="Logout.php"><button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey hvr-wobble-vertical"  style=" margin: 5px; padding: 7px; ">Logout</button></a>
 	    </div>
 </header>
 <body >
@@ -108,7 +109,7 @@ $name = $_SESSION['name'];
   <div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
      <div class="container">
     <div class="overlay"><span style="color: white">
-              <?php echo $name;  ?>
+            Hello <?php echo $name;  ?>
             </span></div> 
     <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
          <b><h1>User Profile</h1></b><br>

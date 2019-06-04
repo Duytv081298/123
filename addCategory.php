@@ -5,7 +5,6 @@
 
   // If upload button is clicked ...
   if (isset($_POST['upload'])) {
-
     // Get text
     $categoryname = mysqli_real_escape_string($db, $_POST['categoryname']);
     $description = mysqli_real_escape_string($db, $_POST['description']);
