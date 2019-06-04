@@ -26,23 +26,27 @@ session_start();
     $pass = addslashes($pass);
 
 	$sql1 = "select * from administrator where user = '$user' and pass = '$pass' ";
-    $row1=query($sql1);
-
+	$result1 = $conn-> query($sql1);
+	$row1 = $result1->fetch_assoc();
 
     $sql2 = "select * from staff where user = '$user' and pass = '$pass' ";
-    $row2=query($sql2);
+    $result2 = $conn-> query($sql2);
+	$row2 = $result2->fetch_assoc();
 
     $sql3 = "select * from trainer where user = '$user' and pass = '$pass' ";
-    $row3=query($sql3);
+    $result3 = $conn-> query($sql3);
+	$row3 = $result3->fetch_assoc();
 
     if ($row1==true) {
-        $_SESSION['user'] = $user;
+        $_SESSION['name'] = $row1['name'];
+        $_SESSION['logged_in'] = TRUE;
+        $_SESSION['role'] = 'admin';
         header('Location: Admin.php');
     }else if($row2==true) {
-        $_SESSION['user'] = $user;
+        $_SESSION['name'] = $row2['name'];
         header('Location: TrainingStaff.php');
     } else if($row3==true) {
-        $_SESSION['user'] = $user;
+        $_SESSION['name'] = $row3['name'];
         header('Location: TrainerStaff.php');
     } else
     header('location:Login.php');

@@ -1,5 +1,7 @@
 <?php
-session_start();?>
+session_start();
+$name = $_SESSION['name'];
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -77,7 +79,7 @@ session_start();?>
 	      padding: 7px">About</button>
 	      <button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey" style=" margin: 5px;
 	      padding: 7px">Home</button>
-	      <a href="trangchu.php"><button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey"  style=" margin: 5px; padding: 7px; ">Logout</button></a>
+	      <a href="Logout.php"><button class="w3-btn w3-xlarge w3-dark-grey w3-hover-light-grey"  style=" margin: 5px; padding: 7px; ">Logout</button></a>
 	    </div>
 </header>
 <body >
@@ -102,21 +104,19 @@ session_start();?>
 
 <div class="w3-row-padding w3-center w3-margin-top">
 
-
-
 <a href="">
-<div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
-   <div class="container">
-  <div class="overlay"><span style="color: white">
-            <?php echo $_SESSION['user'];  ?>
-          </span></div> 
-  <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
-       <b><h1>User Profile</h1></b><br>
-      <img src="images/admin.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
-</div>
-</div>
-</div>
-  </a>
+  <div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
+     <div class="container">
+    <div class="overlay"><span style="color: white">
+              <?php echo $name;  ?>
+            </span></div> 
+    <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
+         <b><h1>User Profile</h1></b><br>
+        <img src="images/admin.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
+  </div>
+  </div>
+  </div>
+    </a>
 
 
   <a href="">

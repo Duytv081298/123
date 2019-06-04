@@ -1,5 +1,6 @@
 	<?php
-	session_start();?>
+	session_start();
+	$name = $_SESSION['name'];?>
 	<!DOCTYPE html>
 	<html>
 	<head>
@@ -109,7 +110,7 @@
 	<div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
 	   <div class="container">
 	  <div class="overlay"><span style="color: white">
-	            <?php echo $_SESSION['user'];  ?>
+	            <?php echo $name;  ?>
 	          </span></div> 
 	  <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
 	       <b><h1>User Profile</h1></b><br>
