@@ -171,7 +171,7 @@
 	      <td><p>Automotive</p></td>
 	      <td><p>Customer </p></td>
 	    </tr>
-	    <tr>\
+	    <tr>
 	      <td><p>About FPT Software</p></td>
 	      <td><p>Innovation Hub</p></td>
 	      <td><p>Automotive</p></td>

@@ -124,26 +124,23 @@ $name = $_SESSION['name'];
    <div class="container">
   <div class="overlay">Detail</div> 
   <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
-       <b><h1>Manage Trainer Staffs</h1></b><br>
+       <b><h1> Trainer Staffs</h1></b><br>
       <img src="images/staff.jpg" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
 </div>
 </div>
 </div>
   </a>
-
-
   <a href="">
 <div class="w3-third" style="width: 31.3333333333% !important; margin: 1%">
    <div class="container">
   <div class="overlay">Detail</div> 
   <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
-       <b><h1>Manage Training Staffs</h1></b><br>
+       <b><h1> Training Staffs</h1></b><br>
       <img src="images/trainer.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">
 </div>
 </div>
 </div>
   </a>
-
   
 </div>
 </body>
@@ -169,7 +166,7 @@ $name = $_SESSION['name'];
       <td><p>Automotive</p></td>
       <td><p>Customer </p></td>
     </tr>
-    <tr>\
+    <tr>
       <td><p>About FPT Software</p></td>
       <td><p>Innovation Hub</p></td>
       <td><p>Automotive</p></td>
