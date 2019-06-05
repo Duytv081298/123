@@ -113,6 +113,15 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
       </div>
 </div>
 
+<div class="dropdown">
+  <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf02d;</i> Manage Class  <i class="fa customer-right-icons">&#xf0d7;</i></a>
+
+    <div class="dropdown-content">
+        <a class="target  sub-nav-customer " href="addClass.php" ><i  class="fa icons">&#xf067;</i>Add Class</a>
+        <a class=" sub-nav-customer" href="modifyClass.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Class</a>
+      </div>
+</div>
+
     <br><br>
   
 </div>
@@ -209,8 +218,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-third">
         <h5>Regions</h5>
-  
-        <iframe src="https://www.google.com/maps/embed?pb=" width="450" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <img src="images/region.jpg" style="width:100%" alt="Google Regional Map">
       </div>
       <div class="w3-twothird">
         <h5>Feeds</h5>

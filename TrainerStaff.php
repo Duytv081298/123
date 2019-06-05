@@ -107,7 +107,7 @@
 
 
 
-			<a href="">
+			<a href="TrainerStaff.php">
 				<div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
 					<div class="container">
 						<div class="overlay"><span style="color: white">
@@ -122,7 +122,7 @@
 			</a>
 
 
-			<a href="">
+			<a href="viewCourseTrainer.php">
 				<div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
 					<div class="container">
 						<div class="overlay">Detail</div> 
@@ -135,7 +135,7 @@
 			</a>
 
 
-			<a href="">
+			<a href="viewTopicTrainer.php">
 				<div class="w3-third" style="width: 31.3333333333% !important; margin: 1%">
 					<div class="container">
 						<div class="overlay">Detail</div> 
