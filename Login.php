@@ -4,24 +4,24 @@
       <meta charset="UTF-8">
       <title>Day 001 Login Form</title>
       <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans:600'>
-      <link rel="stylesheet" href="style.css">
+      <link rel="stylesheet" href="css/style.css">
   </head>
   <?php
   session_start();
   if(isset($_SESSION['logged_in'])){
     if ($_SESSION['logged_in'] && $_SESSION['role'] =='admin')
     {
-        header('Location: Admin.php');
+        header('Location: admin.php');
     }
 
     if ($_SESSION['logged_in'] && $_SESSION['role'] =='staff')
     {
-        header('Location: TrainingStaff.php');
+        header('Location: trainingStaff.php');
     }
 
     if ($_SESSION['logged_in'] && $_SESSION['role'] =='trainer')
     {
-        header('Location: TrainerStaff.php');
+        header('Location: trainerStaff.php');
     }
 
 
@@ -51,9 +51,6 @@
                     <div class="group">
                         <button type="submit" name="login" class="button">Login</button>
                     </div>
-
-                    
-
                 </div>
             </div>
         </div>

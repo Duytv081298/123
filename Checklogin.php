@@ -41,7 +41,7 @@ session_start();
         $_SESSION['name'] = $row1['name'];
         $_SESSION['logged_in'] = TRUE;
         $_SESSION['role'] = 'admin';
-        header('Location: Admin.php');
+        header('Location: admin.php');
     }else if($row2==true) {
         $_SESSION['name'] = $row2['name'];
         $_SESSION['logged_in'] = TRUE;

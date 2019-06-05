@@ -1,0 +1,180 @@
+/*************************/
+/*  Définitions générale */
+/*************************/
+.inner {
+    margin: auto;
+    padding: 80px 0px 30px 0px;
+}
+
+.contener {
+	background-color: white;
+    margin: 10px auto 0px;
+    padding: 5px 50px 20px;
+	width: 1200px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.45);
+    text-align: justify;
+    overflow: hidden;
+}
+
+.inner h1 {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: bold;
+	padding-bottom: 15px;
+    font-size:30px;
+}
+
+
+.title-section {
+	border-bottom:1px solid #333;
+	font-size:18px;
+	font-weight:bold;
+	letter-spacing:2px;
+	margin-bottom:16px;
+	text-transform:uppercase;
+	padding-bottom: 8px;
+}
+
+.quote {
+    font-size: 14px;
+    text-align: justify;
+}
+
+.inner .center {
+	text-align: center;
+}
+
+.tab {
+    margin-left: 20px;
+}
+
+.float {
+    display: block;
+    width:250px;
+	padding: 14px;
+    float:left;
+    text-align: right;
+    margin-right: 30px;
+}
+
+
+/**********************************/
+/*  Définitions des formulaires   */
+/**********************************/
+.formulaire {
+	background-color: white;
+	margin: 10px auto 0px;
+	padding: 5px 50px 20px;
+	width:500px;
+    border-radius: 5px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.45);
+	border-width: 0;
+}
+
+.form-error {
+	color:red;
+	font-size:14px;
+	padding-left: 10px;
+	text-transform:uppercase;
+	letter-spacing:0.5px;
+}
+
+.formulaire .form-error-center {
+	color:red;
+	font-size:14px;
+	text-transform:uppercase;
+	letter-spacing:0.5px;
+	text-align: center;
+}
+
+.g-recaptcha {
+	padding-left: 8px;
+}
+
+.content-profile {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    background-color: #f1f1f1;
+}
+
+.collapsible {
+    background-color: #666;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+}
+
+.collapsible:hover {
+    background-color: #555;
+}
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+.active:after {
+    content: "\2212";
+}
+
+.deconnection {
+    float:right;
+}
+
+.deconnection a {
+    color: blue;
+}
+
+/***************************/
+/*  Définitions des input  */
+/***************************/
+.inner .formul input[type="submit"], .inner .formul input[type="button"]	{
+	background: -webkit-gradient(linear, left top, left bottom, from(#08adff), to(#0459b7));
+	border: 1px solid #7d7d7d;
+	color: #fff;
+	cursor: pointer;
+	font-family: Arial,sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 10px 30px;
+	text-decoration: none;
+	text-shadow: 0 1px 1px #333;
+	text-transform: uppercase;
+	text-align: center;
+	margin: 10px;
+}
+
+ .inner .formul input[type=submit]:hover, .inner .formul input[type="button"]:hover {
+	background:-webkit-gradient(linear, left top, left bottom, from(#0bcdff), to(#067cd3));
+	border-color: #black;
+	text-decoration: none;
+}
+
+.inner input[type="text"], input[type="password"], input[type="date"], input[type="file"],textarea, select {
+	background: -webkit-gradient(linear, left top, left bottom, from(#eee), to(#fff), color-stop(0.2, #fff));
+	border: 1px solid #7d7d7d;
+	padding: 8px;
+	margin: 8px;
+	width: 350px;
+    resize: vertical;
+}
+
+.inner input[type="text"]:focus, input[type="password"]:focus, input[type="date"]:focus, input[type="file"]:focus, textarea:focus {
+	border-color: #093c75;
+	-moz-box-shadow: 0 0 3px #0459b7;
+	-webkit-box-shadow: 0 0 3px #0459b7;
+	outline: none;
+}
+
