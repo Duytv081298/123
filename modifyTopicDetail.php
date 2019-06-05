@@ -37,7 +37,7 @@
                         function show(){
                           alert("Modified Successful!");
                         }
-                    </script>
+</script>
 </div>
 </body>
 </html>

@@ -1,6 +1,6 @@
 
 
-       
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,54 +31,51 @@
 							</tr>
 						</thead>
 						<tbody>
-					<?php 
+							<?php 
 							require_once'db.php';
 
 							$sql = "SELECT * FROM course ";
-
-							
-
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
 							    // output data of each row
-							    while($row = $result->fetch_assoc()) {
-							    	$idcourse =  $row["idcourse"];
-							    	?>
-								<tr>
-									<td class="column1"><?php echo $row["idcourse"]?></td>
-									<td class="column2"><?php echo $row["name"]?></td>
-									<td class="column3"><?php echo $row["description"]?></td>
-									<td class="column4">
-									
-					<?php 
-							require_once'db.php';
+								while($row = $result->fetch_assoc()) {
+									$idcourse =  $row["idcourse"];
+									?>
+									<tr>
+										<td class="column1"><?php echo $row["idcourse"]?></td>
+										<td class="column2"><?php echo $row["name"]?></td>
+										<td class="column3"><?php echo $row["description"]?></td>
+										<td class="column4">
 
-							$sql1 = "SELECT topic.name FROM topic INNER JOIN course ON topic.idcourse=course.idcourse where course.idcourse =".$idcourse;
+											<?php 
+											require_once'db.php';
 
-							$result1 = $conn->query($sql1);
-							if ($result1->num_rows > 0) {
+											$sql1 = "SELECT topic.name FROM topic INNER JOIN course ON topic.idcourse=course.idcourse where course.idcourse =".$idcourse;
+
+											$result1 = $conn->query($sql1);
+											if ($result1->num_rows > 0) {
 							    // output data of each row
-							    while($row1 = $result1->fetch_assoc()) {
-							    	?>
-								<span><?php echo $row1["name"]?></span>
+												while($row1 = $result1->fetch_assoc()) {
+													?>
+													<span><?php echo $row1["name"]?></span>
 
-					<?php
-									}
-									}
-									?>
+													<?php
+												}
+											}
+											?>
 
 
-									</td>
-									<td class="column5"><button>Update</button></td>
-									<td class="column6"><button>Delete</button></td>
-									
-								</tr>
+										</td>
+										<td class="column5"><button>Update</button></td>
+										<td class="column6"><button>Delete</button></td>
 
-					<?php
-									}
-									}
-									?>
-																	
+									</tr>
+
+									<?php
+								}
+							}
+							?>
+
 						</tbody>
 					</table>
 				</div>
