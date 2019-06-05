@@ -39,10 +39,46 @@ if (isset($_POST['upload'])) {
     <input type="text" placeholder="Enter Course's Description" name="description" required>
 
     <label for="idstaff"><b>ID Staff </b></label>
-    <input type="text" placeholder="Enter id staff" name="idstaff" required>
+    <input list="idstaff" name="idstaff">
+        <datalist id="idstaff">
+        <?php 
+        require_once'db.php';
+
+        $sql = "SELECT * FROM staff ";
+
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+                  // output data of each row
+          while($row = $result->fetch_assoc()) {
+            ?>
+            <option><?php echo $row["idstaff"]?>-<?php echo $row["name"]?></option>
+            <?php
+          }
+        }
+        ?>
+        </datalist>
+        <br/>
+        <br/>
     
     <label for="idcategory"><b>Course's Category</b></label>
-    <input type="text" placeholder="Enter Course's Catagory" name="idcategory" required>
+    <input list="idcategory" name="idcategory">
+        <datalist id="idcategory">
+        <?php 
+        require_once'db.php';
+
+        $sql = "SELECT * FROM category ";
+
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+                  // output data of each row
+          while($row = $result->fetch_assoc()) {
+            ?>
+            <option><?php echo $row["idcategory"]?>-<?php echo $row["name"]?></option>
+            <?php
+          }
+        }
+        ?>
+        </datalist>
 
     <div class="clearfix">
       <button type="submit" class="addCourse" name="upload">Add Course</button>

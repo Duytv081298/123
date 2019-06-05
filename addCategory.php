@@ -13,9 +13,7 @@
     $sql = "INSERT INTO  category (name, description, idstaff) VALUES ('$name', '$description', '$idstaff')";
     // execute query
     mysqli_query($db, $sql);
-    
   }
-
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +48,7 @@
                   // output data of each row
           while($row = $result->fetch_assoc()) {
             ?>
-            <option><?php echo $row["idstaff"]?></option>
+            <option><?php echo $row["idstaff"]?>-<?php echo $row["name"]?></option>
             <?php
           }
         }
