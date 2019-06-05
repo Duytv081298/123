@@ -71,8 +71,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf02d;</i> Manage Course  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
-        <a class="target  sub-nav-customer " href="add/addCourse.php" ><i  class="fa icons">&#xf067;</i>Add Course</a>
-        <a class=" sub-nav-customer" href="modify/modifyCourse.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Course</a>
+        <a class="target  sub-nav-customer " href="addCourse.php" ><i  class="fa icons">&#xf067;</i>Add Course</a>
+        <a class=" sub-nav-customer" href="modifyCourse.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Course</a>
       </div>
   </div>
 
@@ -80,8 +80,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf2b9;</i> Manage Topics  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
-        <a class="target  sub-nav-customer " href="add/addTopic.php" ><i  class="fa icons">&#xf067;</i>Add Topic</a>
-        <a class=" sub-nav-customer" href="modify/modifyTopic.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Topic</a>
+        <a class="target  sub-nav-customer " href="addTopic.php" ><i  class="fa icons">&#xf067;</i>Add Topic</a>
+        <a class=" sub-nav-customer" href="modifyTopic.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Topic</a>
       </div>
 </div>
 
@@ -90,8 +90,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf03b;</i> Manage Course Categories  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
-        <a class="target  sub-nav-customer " href="add/addCategory.php" ><i  class="fa icons">&#xf067;</i>Add Category</a>
-        <a class=" sub-nav-customer" href="modify/modifyCategory.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Category</a>
+        <a class="target  sub-nav-customer " href="addCategory.php" ><i  class="fa icons">&#xf067;</i>Add Category</a>
+        <a class=" sub-nav-customer" href="modifyCategory.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Category</a>
       </div>
 </div>
 
@@ -99,8 +99,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <a href="#" class="w3-bar-item w3-button w3-padding"><i class="fa fa-users fa-fw"></i>  Manage Trainee  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
-        <a class="target  sub-nav-customer " href="add/addTrainee.php" ><i  class="fa icons">&#xf067;</i>Add Trainee</a>
-        <a class=" sub-nav-customer" href="modify/modifyTrainee.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Trainee</a>
+        <a class="target  sub-nav-customer " href="addTrainee.php" ><i  class="fa icons">&#xf067;</i>Add Trainee</a>
+        <a class=" sub-nav-customer" href="modifyTrainee.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Trainee</a>
       </div>
 </div>
 
@@ -108,8 +108,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <a href="#" class="w3-bar-item w3-button w3-padding"><i  class="fa icons">&#xf007;</i>  Manage Trainer's profile  <i class="fa customer-right-icons">&#xf0d7;</i></a>
 
     <div class="dropdown-content">
-      <a class="target  sub-nav-customer " href="add/addTrainer.php" ><i  class="fa icons">&#xf067;</i>Add Trainer</a>
-        <a class=" sub-nav-customer" href="modify/modifyTrainer.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Trainer's profile</a>
+      <a class="target  sub-nav-customer " href="addTrainer.php" ><i  class="fa icons">&#xf067;</i>Add Trainer</a>
+        <a class=" sub-nav-customer" href="modifyTrainer.php" onclick="SideBar(event, 'manage-customer-id')"><i class="fa icons">&#xf0ce;</i>Modify Trainer's profile</a>
       </div>
 </div>
 
