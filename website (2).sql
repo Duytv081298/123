@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th6 04, 2019 lúc 11:58 AM
+-- Thời gian đã tạo: Th6 05, 2019 lúc 04:40 AM
 -- Phiên bản máy phục vụ: 10.1.36-MariaDB
 -- Phiên bản PHP: 7.2.11
 
@@ -201,6 +201,13 @@ CREATE TABLE `trainer` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
+-- Đang đổ dữ liệu cho bảng `trainer`
+--
+
+INSERT INTO `trainer` (`idtrainer`, `user`, `pass`, `name`, `idadmin`, `idstaff`, `idclass`, `status`) VALUES
+(1, 'TrainerDuy@fpt.edu.vn', '1234', 'DuyTrainer', 1, 2, 1, 1);
+
+--
 -- Chỉ mục cho các bảng đã đổ
 --
 
@@ -317,7 +324,7 @@ ALTER TABLE `trainee`
 -- AUTO_INCREMENT cho bảng `trainer`
 --
 ALTER TABLE `trainer`
-  MODIFY `idtrainer` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idtrainer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Các ràng buộc cho các bảng đã đổ
