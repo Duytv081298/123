@@ -6,12 +6,14 @@
   // If upload button is clicked ...
   if (isset($_POST['upload'])) {
     // Get text
-    $categoryname = mysqli_real_escape_string($db, $_POST['categoryname']);
+    $name = mysqli_real_escape_string($db, $_POST['name']);
     $description = mysqli_real_escape_string($db, $_POST['description']);
+    $idstaff = mysqli_real_escape_string($db, $_POST['idstaff']);
 
-    $sql = "INSERT INTO  categorycourse (categoryname, description) VALUES ('$categoryname', '$description')";
+    $sql = "INSERT INTO  category (name, description, idstaff) VALUES ('$name', '$description', '$idstaff')";
     // execute query
     mysqli_query($db, $sql);
+    
   }
 
 ?>
@@ -29,11 +31,13 @@
     <hr>
 
 
-    <label for="categoryname"><b>Category's name</b></label> 
-    <input type="text" placeholder="Enter category's name" name="categoryname" required>
+    <label for="name"><b>Category's name</b></label> 
+    <input type="text" placeholder="Enter category's name" name="name" required>
 
     <label for="description"><b>Category's Description </b></label>
     <input type="text" placeholder="Enter category's Description" name="description" required>
+    <label for="idstaff"><b>ID Staff </b></label>
+    <input type="text" placeholder="Enter id staff" name="idstaff" required>
     
     
 
