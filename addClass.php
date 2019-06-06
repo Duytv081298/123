@@ -1,3 +1,8 @@
+
+<?php
+session_start();
+$idstaff = $_SESSION['idstaff'];
+?>
 <?php
   // Create database connection
 $db = mysqli_connect("localhost", "root", "", "website");
@@ -9,7 +14,6 @@ if (isset($_POST['upload'])) {
   $user = mysqli_real_escape_string($db, $_POST['user']);
   $pass = mysqli_real_escape_string($db, $_POST['pass']);
   $status = mysqli_real_escape_string($db, $_POST['status']);
-  $idstaff = mysqli_real_escape_string($db, $_POST['idstaff']);
   $idclass = mysqli_real_escape_string($db, $_POST['idclass']);
 
   $sql = "INSERT INTO  trainer (name, user, pass, status,idstaff, idclass) VALUES ('$name', '$user', '$pass', '$status', '$idstaff', '$idclass')";
@@ -35,65 +39,22 @@ if (isset($_POST['upload'])) {
         <br/><br/>
 
         <label for="idstaff"><b>ID Staff </b></label>
-
-        <input list="idstaff" name="idstaff">
-        <datalist id="idstaff">
-          <?php 
-          require_once'db.php';
-          $sql = "SELECT * FROM staff ";
-
-          $result = $conn->query($sql);
-          if ($result->num_rows > 0) {
-                  // output data of each row
-            while($row = $result->fetch_assoc()) {
-              ?>
-              <option><?php echo $row["idstaff"]?>-<?php echo $row["name"]?></option>
-
-              <?php
-            }
-          }
-          ?>
-        </datalist>
+        <input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
         <br/>
         <br/>
 
 
-
-        
         <?php 
         require_once'db.php';
-
         $sql = "SELECT * FROM category ";
-
         $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
+        $row=$result->fetch_assoc();
         $idcategory = $row['idcategory'];
-
-                  // output data of each row
-        while($row=$result->fetch_assoc()) {
-          ?>
-          <option><?php echo $row["idcategory"]?>-<?php echo $row["name"]?></option>
-          <?php
-        }
-        
-        ?>
-
-
-
-        
-
-        <?php 
-        require_once'db.php';
-
-        $sql = "SELECT * FROM category ";
-        $result = $conn->query($sql);
         if($row=$result->fetch_assoc()){
-          $idcategory = $row['idcategory'];
           ?> 
           <label for="idcategory"><b>ID category </b></label>
           <input list="idcategory" name="idcategory">
           <datalist id="idcategory">
-
             <?php 
             while($row=$result->fetch_assoc()) {
               ?>
@@ -101,7 +62,6 @@ if (isset($_POST['upload'])) {
               <?php
             }
             ?>
-
           </datalist>
 
           <label for="idcourse"><b>ID Course </b></label>
@@ -121,9 +81,9 @@ if (isset($_POST['upload'])) {
             }
             ?>
           </datalist>
-        <?php
-              }
-            ?>
+          <?php
+        }
+        ?>
         <br/><br/>
 
         <div class="clearfix">

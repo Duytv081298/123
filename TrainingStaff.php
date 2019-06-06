@@ -218,7 +218,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-third">
         <h5>Regions</h5>
-        <img src="images/region.jpg" style="width:100%" alt="Google Regional Map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.9395562180825!2d105.77964615926325!3d21.032120345717452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b45ca965a5%3A0x2ef40f043f590681!2zQuG7h25oIFZp4buHbiAxOSAtIDggQuG7mSBDw7RuZyBBbg!5e0!3m2!1svi!2s!4v1559735339335!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
       <div class="w3-twothird">
         <h5>Feeds</h5>

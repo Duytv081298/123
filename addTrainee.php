@@ -1,4 +1,8 @@
 <?php
+session_start();
+$idstaff = $_SESSION['idstaff'];
+?>
+<?php
   // Create database connection
   $db = mysqli_connect("localhost", "root", "", "website");
 
@@ -9,7 +13,6 @@
     $dayofbirth = mysqli_real_escape_string($db, $_POST['dayofbirth']);
     $mainlanguage = mysqli_real_escape_string($db, $_POST['mainlanguage']);
     $experience = mysqli_real_escape_string($db, $_POST['experience']);
-    $idstaff = mysqli_real_escape_string($db, $_POST['idstaff']);
     $idclass = mysqli_real_escape_string($db, $_POST['idclass']);
 
     $sql = "INSERT INTO  Trainee (name, dateofbirth, mainlanguage, experience,idstaff, idclass) VALUES ('$name', '$dayofbirth', '$mainlanguage', '$experience', '$idstaff', '$idclass')";
@@ -44,26 +47,9 @@
     <textarea type="text" placeholder="Enter Your Experience" name="experience" required></textarea>
     <br/>
     <br/>
-     <label for="idstaff"><b>ID Staff </b></label>
-    
-        <input list="idstaff" name="idstaff">
-        <datalist id="idstaff">
-        <?php 
-        require_once'db.php';
+    <label for="idstaff"><b>ID Staff </b></label>
+    <input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
 
-        $sql = "SELECT * FROM staff ";
-
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-                  // output data of each row
-          while($row = $result->fetch_assoc()) {
-            ?>
-            <option><?php echo $row["idstaff"]?>-<?php echo $row["name"]?></option>
-            <?php
-          }
-        }
-        ?>
-        </datalist>
         <br/>
         <br/>
 

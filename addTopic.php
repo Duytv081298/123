@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+$idstaff = $_SESSION['idstaff'];
+?>
 <?php
   // Create database connection
 $db = mysqli_connect("localhost", "root", "", "website");
@@ -8,7 +11,6 @@ if (isset($_POST['upload'])) {
     // Get text
   $name = mysqli_real_escape_string($db, $_POST['name']);
   $description = mysqli_real_escape_string($db, $_POST['description']);
-  $idstaff = mysqli_real_escape_string($db, $_POST['idstaff']);
   $idcourse = mysqli_real_escape_string($db, $_POST['idcourse']);
 
   $sql = "INSERT INTO  topic (name, description, idstaff, idcourse) VALUES ('$name', '$description', '$idstaff', '$idcourse')";
@@ -36,25 +38,7 @@ if (isset($_POST['upload'])) {
     <input type="text" placeholder="Enter Topic's Description" name="description" required>
 
     <label for="idstaff"><b>ID Staff </b></label>
-    
-        <input list="idstaff" name="idstaff">
-        <datalist id="idstaff">
-        <?php 
-        require_once'db.php';
-
-        $sql = "SELECT * FROM staff ";
-
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-                  // output data of each row
-          while($row = $result->fetch_assoc()) {
-            ?>
-            <option><?php echo $row["idstaff"]?>-<?php echo $row["name"]?></option>
-            <?php
-          }
-        }
-        ?>
-        </datalist>
+    <input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
 
     <label for="idcourse"><b>ID Course </b></label>
     

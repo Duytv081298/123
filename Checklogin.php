@@ -37,27 +37,25 @@ session_start();
     $result3 = $conn-> query($sql3);
 	$row3 = $result3->fetch_assoc();
 
-    if ($row1==true) {
+    if ($result1->num_rows > 0) {
         $_SESSION['name'] = $row1['name'];
         $_SESSION['logged_in'] = TRUE;
         $_SESSION['role'] = 'admin';
         header('Location: admin.php');
-    }else if($row2==true) {
+    }else if($result2->num_rows > 0) {
         $_SESSION['name'] = $row2['name'];
+        $_SESSION['idstaff'] = $row2['idstaff'];
         $_SESSION['logged_in'] = TRUE;
         $_SESSION['role'] = 'staff';
         header('Location: TrainingStaff.php');
-    } else if($row3==true) {
+    } else if($result3->num_rows > 0) {
         $_SESSION['name'] = $row3['name'];
         $_SESSION['logged_in'] = TRUE;
         $_SESSION['role'] = 'trainer';
         header('Location: TrainerStaff.php');
     } else
     header('location:Login.php');
-
-    
   }
-
 ?>
 
 

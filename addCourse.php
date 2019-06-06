@@ -1,4 +1,7 @@
-
+<?php
+session_start();
+$idstaff = $_SESSION['idstaff'];
+?>
 <?php
   // Create database connection
 $db = mysqli_connect("localhost", "root", "", "website");
@@ -8,15 +11,11 @@ if (isset($_POST['upload'])) {
     // Get text
   $name = mysqli_real_escape_string($db, $_POST['name']);
   $description = mysqli_real_escape_string($db, $_POST['description']);
-  $idstaff = mysqli_real_escape_string($db, $_POST['idstaff']);
   $idcategory = mysqli_real_escape_string($db, $_POST['idcategory']);
-
   $sql = "INSERT INTO  course (name, description, idstaff, idcategory) VALUES ('$name', '$description', '$idstaff', '$idcategory')";
     // execute query
   mysqli_query($db, $sql);
-
 }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -39,27 +38,8 @@ if (isset($_POST['upload'])) {
     <input type="text" placeholder="Enter Course's Description" name="description" required>
 
     <label for="idstaff"><b>ID Staff </b></label>
-    <input list="idstaff" name="idstaff">
-        <datalist id="idstaff">
-        <?php 
-        require_once'db.php';
+	<input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
 
-        $sql = "SELECT * FROM staff ";
-
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
-                  // output data of each row
-          while($row = $result->fetch_assoc()) {
-            ?>
-            <option><?php echo $row["idstaff"]?>-<?php echo $row["name"]?></option>
-            <?php
-          }
-        }
-        ?>
-        </datalist>
-        <br/>
-        <br/>
-    
     <label for="idcategory"><b>Course's Category</b></label>
     <input list="idcategory" name="idcategory">
         <datalist id="idcategory">
