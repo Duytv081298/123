@@ -56,8 +56,9 @@ session_start();
     } else
     header('location:Login.php');
   }
-?>
 
+
+?>
 
 </body>
 </html>

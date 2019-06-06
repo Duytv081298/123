@@ -1,5 +1,24 @@
 
+<?php
+session_start();
+$idstaff = $_SESSION['idstaff'];
+?>
+<?php
+  // Create database connection
+  $db = mysqli_connect("localhost", "root", "", "website");
 
+  // If upload button is clicked ...
+  if (isset($_POST['upload'])) {
+    // Get text
+    $name = mysqli_real_escape_string($db, $_POST['name']);
+    $description = mysqli_real_escape_string($db, $_POST['description']);
+
+
+    $sql = "INSERT INTO  category (name, description, idstaff) VALUES ('$name', '$description', '$idstaff')";
+    // execute query
+    mysqli_query($db, $sql);
+  }
+?>
        
 <!DOCTYPE html>
 <html lang="en">
@@ -11,9 +30,21 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
 
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+
 </head>
 <body>
 	
+ 	<?php 
+		if(isset($_GET['del']))
+	   {
+	   	require_once'db.php';
+	   	$idcategory = $_GET['del'];
+	    $sql ="DELETE FROM category WHERE idcategory ='". (int)$idcategory ."'";
+	    $result = $conn-> query($sql);
+	    $message = "Category Deleted!";
+		echo "<script type='text/javascript'>alert('$message');</script>";
+	   }
+	 ?>
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -67,10 +98,14 @@
 
 									</td>
 									<td class="column5"><button>Update</button></td>
-									<td class="column6"><button>Delete</button></td>
+
+									<td class="column6">
+										<a href="modifyCategory.php?del=<?php echo $row["idcategory"]?>"> <input type="button" value="Delete" name="deletecategory"> 
+										</a>
+
+									</td>
 									
 								</tr>
-
 					<?php
 									}
 									}
