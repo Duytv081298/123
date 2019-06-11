@@ -140,7 +140,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </header>
 
   <div class="w3-row-padding w3-margin-bottom">
-   
+   <a href="modifyCourse.php">
     <div class="w3-quarter hvr-wobble-vertical">      
       <div class="w3-container w3-red w3-padding-16">
 
@@ -161,9 +161,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h4>Courses</h4>
     </div>
   </div>
+	</a>
 
-
-
+	<a href="modifyTopic.php">
     <div class="w3-quarter hvr-wobble-vertical">
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-address-book-o w3-xxxlarge"></i></div>
@@ -180,7 +180,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h4>Topics</h4>
       </div>
     </div>
-    <div class="w3-quarter hvr-wobble-vertical">
+    </a>
+    <a href="modifyTrainer.php">    
+    	<div class="w3-quarter hvr-wobble-vertical">
       <div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
         <div class="w3-right">
@@ -196,6 +198,8 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h4>Trainers</h4>
       </div>
     </div>
+
+<a href="modifyTrainee.php">
     <div class="w3-quarter hvr-wobble-vertical">
       <div class="w3-container w3-orange w3-text-white w3-padding-16">
         <div class="w3-left"><i class="fa fa-users w3-xxxlarge"></i></div>
@@ -212,13 +216,14 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h4>Trainees</h4>
       </div>
     </div>
+    </a>
   </div>
 
   <div class="w3-panel">
     <div class="w3-row-padding" style="margin:0 -16px">
       <div class="w3-third">
         <h5>Regions</h5>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3889.9395562180825!2d105.77964615926325!3d21.032120345717452!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313454b45ca965a5%3A0x2ef40f043f590681!2zQuG7h25oIFZp4buHbiAxOSAtIDggQuG7mSBDw7RuZyBBbg!5e0!3m2!1svi!2s!4v1559735339335!5m2!1svi!2s" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119176.68458488687!2d105.59422057007767!3d21.021824206449956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4ca62db20f%3A0x26b6024f6922698c!2zQ8O0bmcgVHkgVG5oaCBHaeG6o2kgUGjDoXAgUGjhuqduIE3hu4FtIEtpbmggRG9hbmggVHLhu7FjIFR1eeG6v24gRnB0!5e0!3m2!1svi!2s!4v1560219491655!5m2!1svi!2s" width= 100% height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
       </div>
       <div class="w3-twothird">
         <h5>Feeds</h5>
