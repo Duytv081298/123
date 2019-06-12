@@ -1,5 +1,7 @@
-
-
+<?php
+session_start();
+$idstaff = $_SESSION['idstaff'];
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -25,7 +27,6 @@
 		Header( "Location: modifyCourse.php" );
 	}
 	?>  
-	
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -45,7 +46,7 @@
 										<button type="button" class="btn btn-default" >
 											<?php
 											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-											echo "<a href='$url'>Go Back</a>"; 
+											echo "<a href='TrainingStaff.php'>Go Back</a>"; 
 											?>
 										</button>
 									</div>
@@ -68,7 +69,6 @@
 						<tbody>
 							<?php 
 							require_once'db.php';
-
 							$sql = "SELECT * FROM course ";
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
@@ -94,7 +94,6 @@
 												while($row1 = $result1->fetch_assoc()) {
 													?>
 													<span><?php echo $row1["name"]?></span>
-
 													<?php
 												}
 											}
@@ -102,7 +101,7 @@
 
 
 										</td>
-										<td class="column5"><a href="https://youtu.be/2WRN7_jj9bI"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column5"><a href="updateCourse.php"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
 											<a class="btn btn-default" href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>">
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>

@@ -1,6 +1,7 @@
 <?php
 session_start();
 $idstaff = $_SESSION['idstaff'];
+$idcourse = $_SESSION['idcourse'];
 ?>
 
 <!DOCTYPE html>

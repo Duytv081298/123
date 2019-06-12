@@ -47,6 +47,7 @@ session_start();
         $_SESSION['user'] = $row2['user'];
         $_SESSION['pass'] = $row2['pass'];
         $_SESSION['name'] = $row2['name'];
+        $_SESSION['idadmin'] = $row2['idadmin'];
         $_SESSION['logged_in'] = TRUE;
         $_SESSION['role'] = 'staff';
         header('Location: TrainingStaff.php');

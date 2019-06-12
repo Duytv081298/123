@@ -4,6 +4,7 @@ $idstaff = $_SESSION['idstaff'];
 $user = $_SESSION['user'];
 $pass = $_SESSION['pass'];
 $name = $_SESSION['name'];
+$idadmin = $_SESSION['idadmin'];
 ?>
 
 
@@ -24,7 +25,7 @@ $name = $_SESSION['name'];
 
                 <button class="collapsible">Your profile</button>
                 <div class="content-profile">
-                    <form action="Updata.php" method="POST" class="formul">
+                    <form action="update.php" method="POST" class="formul">
 
                         <h2 class="title-section">Modify Information</h2>
 

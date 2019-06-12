@@ -4,6 +4,7 @@ $name = $_SESSION['name'];
 $user = $_SESSION['user'];
 $pass = $_SESSION['pass'];
 $name = $_SESSION['name'];
+$idadmin = $_SESSION['idadmin'];
 ?>
 <!DOCTYPE html>
 <html>
