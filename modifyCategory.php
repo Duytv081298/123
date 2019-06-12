@@ -13,6 +13,7 @@ $idstaff = $_SESSION['idstaff'];
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
@@ -73,10 +74,10 @@ $idstaff = $_SESSION['idstaff'];
 											?>
 										</td>
 										<td class="column5"><button>Update</button></td>
-
 										<td class="column6">
-											<a href="modifyCategory.php?deletecategory=<?php echo $row["idcategory"]?>"> <button type="Delete">Delete</button>
-											</a>
+											<a class="btn btn-default" href="modifyCategory.php?deletecategory=<?php echo $row["idcategory"]?>">
+  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
+											
 										</td>
 									</tr>
 									<?php

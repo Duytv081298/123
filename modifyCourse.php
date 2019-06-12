@@ -9,7 +9,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
@@ -79,8 +79,9 @@
 										</td>
 										<td class="column5"><button>Update</button></td>
 										<td class="column6">
-											<a href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>"> <button type="Delete">Delete</button>
-											</a>
+											<a class="btn btn-default" href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>">
+  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
+											
 										</td>
 
 									</tr>

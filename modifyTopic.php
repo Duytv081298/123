@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
@@ -33,7 +33,6 @@
 								<th class="column4">Course's Name</th>
 								<th class="column5">Update</th>
 								<th class="column6">Delete</th>
-								
 							</tr>
 						</thead>
 						<tbody>
@@ -43,7 +42,6 @@
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
 								while($row = $result->fetch_assoc()) {
-									 
 									?>
 									<tr>
 										<td class="column1"><?php echo $row["idtopic"]?></td>
@@ -52,8 +50,9 @@
 										<td class="column4"><?php echo $row["CourseName"]?>
 										<td class="column5"><button>Update</button></td>
 										<td class="column6">
-											<a href="modifyTopic.php?deletetopic=<?php echo $row["idtopic"]?>"> <button type="Delete">Delete</button>
-											</a>
+											<a class="btn btn-default" href="modifyTopic.php?deletetopic=<?php echo $row["idtopic"]?>"> 
+  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
+											
 										</td>
 
 									</tr>
@@ -62,14 +61,11 @@
 								}
 							}
 							?>
-
 						</tbody>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-
-
 </body>
 </html>
