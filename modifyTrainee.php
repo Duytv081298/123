@@ -6,11 +6,20 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
-
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	
+	<?php 
+	if(isset($_GET['deletetrainee']))
+	{
+		require_once'db.php';
+		$idtrainee = $_GET['deletetrainee'];
+		$sql ="DELETE FROM trainee WHERE idtrainee ='". (int)$idtrainee ."'";
+		$result = $conn-> query($sql);
+		Header( "Location: modifyTrainee.php" );
+	}
+	?> 
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -104,9 +113,12 @@
 											}
 											?>
 										</td>
-
 										<td class="column5"><button>Update</button></td>
-										<td class="column6"><button>Delete</button></td>
+										<td class="column6">
+											<a class="btn btn-default" href="modifyTrainee.php?deletetrainee=<?php echo $row["idtrainee"]?>"> 
+  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
+											
+										</td>
 
 									</tr>
 

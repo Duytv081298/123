@@ -10,7 +10,16 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
-	
+	<?php 
+	if(isset($_GET['deletecourse']))
+	{
+		require_once'db.php';
+		$idtopic = $_GET['deletecourse'];
+		$sql ="DELETE FROM topic WHERE idtopic ='". (int)$idtopic ."'";
+		$result = $conn-> query($sql);
+		Header( "Location: modifyTopic.php" );
+	}
+	?> 
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -34,6 +43,8 @@
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
 								while($row = $result->fetch_assoc()) {
+									$_SESSION['idtopic'] = $row['idtopic'];
+									$idtopic = $_SESSION['idtopic'];
 									?>
 									<tr>
 										<td class="column1"><?php echo $row["idtopic"]?></td>
@@ -41,7 +52,10 @@
 										<td class="column3"><?php echo $row["description"]?></td>
 										<td class="column4"><?php echo $row["CourseName"]?>
 										<td class="column5"><button>Update</button></td>
-										<td class="column6"><button>Delete</button></td>
+										<td class="column6">
+											<a href="modifyTopic.php?deletetopic=<?php echo $row["idtopic"]?>"> <button type="Delete">Delete</button>
+											</a>
+										</td>
 
 									</tr>
 

@@ -18,7 +18,7 @@
 	{
 		require_once'db.php';
 		$idcourse = $_GET['deletecourse'];
-		$sql ="DELETE FROM category WHERE idcategory ='". (int)$idcourse ."'";
+		$sql ="DELETE FROM course WHERE idcourse ='". (int)$idcourse ."'";
 		$result = $conn-> query($sql);
 		Header( "Location: modifyCourse.php" );
 	}
@@ -49,7 +49,8 @@
 							if ($result->num_rows > 0) {
 							    // output data of each row
 								while($row = $result->fetch_assoc()) {
-									$idcourse =  $row["idcourse"];
+									$_SESSION['idcourse'] = $row['idcourse'];
+									$idcourse = $_SESSION['idcourse'];
 									?>
 									<tr>
 										<td class="column1"><?php echo $row["idcourse"]?></td>
@@ -78,7 +79,7 @@
 										</td>
 										<td class="column5"><button>Update</button></td>
 										<td class="column6">
-											<a href="modifyCategory.php?deletecourse=<?php echo $row["idcourse"]?>"> <button type="Delete">Delete</button>
+											<a href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>"> <button type="Delete">Delete</button>
 											</a>
 										</td>
 
