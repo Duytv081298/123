@@ -43,8 +43,7 @@
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
 								while($row = $result->fetch_assoc()) {
-									$_SESSION['idtopic'] = $row['idtopic'];
-									$idtopic = $_SESSION['idtopic'];
+									 
 									?>
 									<tr>
 										<td class="column1"><?php echo $row["idtopic"]?></td>
