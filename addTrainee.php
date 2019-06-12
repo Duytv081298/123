@@ -2,31 +2,13 @@
 session_start();
 $idstaff = $_SESSION['idstaff'];
 ?>
-<?php
-  // Create database connection
-  $db = mysqli_connect("localhost", "root", "", "website");
 
-  // If upload button is clicked ...
-  if (isset($_POST['upload'])) {
-    // Get text
-    $name = mysqli_real_escape_string($db, $_POST['name']);
-    $dayofbirth = mysqli_real_escape_string($db, $_POST['dayofbirth']);
-    $mainlanguage = mysqli_real_escape_string($db, $_POST['mainlanguage']);
-    $experience = mysqli_real_escape_string($db, $_POST['experience']);
-    $idclass = mysqli_real_escape_string($db, $_POST['idclass']);
-
-    $sql = "INSERT INTO  Trainee (name, dateofbirth, mainlanguage, experience,idstaff, idclass) VALUES ('$name', '$dayofbirth', '$mainlanguage', '$experience', '$idstaff', '$idclass')";
-    // execute query
-    mysqli_query($db, $sql);
-  }
-
-?>
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="css/styleadd.css">
 <body>
 <div class="content" style="padding: 50px 200px 50px 200px">
-<form action="#" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
+<form action="add.php" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
   <div class="container">
     <h1>Add Trainee</h1>
     <p>Please fill in this form to add Trainee.</p>
@@ -75,9 +57,8 @@ $idstaff = $_SESSION['idstaff'];
         ?>
         </datalist>
     
-
     <div class="clearfix">
-      <button type="submit" class="addCourse" name="upload">Add Trainee</button>
+      <button type="submit" class="addCourse" name="uploadtrainee">Add Trainee</button>
     </div>
   </div>
 </form>

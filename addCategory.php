@@ -10,13 +10,11 @@ $idstaff = $_SESSION['idstaff'];
 <body>
   <div class="content" style="padding: 50px 200px 50px 200px">
 
-<form action="modifyCategory.php" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
+<form action="add.php" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
   <div class="container">
     <h1>Add Category</h1>
     <p>Please fill in this form to add Category.</p>
     <hr>
-
-
     <label for="name"><b>Category's name</b></label> 
     <input type="text" placeholder="Enter category's name" name="name" required>
 
@@ -26,7 +24,7 @@ $idstaff = $_SESSION['idstaff'];
     <input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
 
                    <div class="clearfix">
-      <button type="submit" name="upload">Add Category</button>
+      <button type="submit" name="uploadcategory">Add Category</button>
     </div>
   </div>
 </form>

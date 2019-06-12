@@ -3,22 +3,7 @@
 session_start();
 $idstaff = $_SESSION['idstaff'];
 ?>
-<?php
-  // Create database connection
-  $db = mysqli_connect("localhost", "root", "", "website");
 
-  // If upload button is clicked ...
-  if (isset($_POST['upload'])) {
-    // Get text
-    $name = mysqli_real_escape_string($db, $_POST['name']);
-    $description = mysqli_real_escape_string($db, $_POST['description']);
-
-
-    $sql = "INSERT INTO  category (name, description, idstaff) VALUES ('$name', '$description', '$idstaff')";
-    // execute query
-    mysqli_query($db, $sql);
-  }
-?>
        
 <!DOCTYPE html>
 <html lang="en">

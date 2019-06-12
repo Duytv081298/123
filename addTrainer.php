@@ -2,25 +2,7 @@
 session_start();
 $idstaff = $_SESSION['idstaff'];
 ?>
-<?php
-  // Create database connection
-$db = mysqli_connect("localhost", "root", "", "website");
 
-  // If upload button is clicked ...
-if (isset($_POST['upload'])) {
-    // Get text
-  $name = mysqli_real_escape_string($db, $_POST['name']);
-  $user = mysqli_real_escape_string($db, $_POST['user']);
-  $pass = mysqli_real_escape_string($db, $_POST['pass']);
-  $status = mysqli_real_escape_string($db, $_POST['status']);
-  $idclass = mysqli_real_escape_string($db, $_POST['idclass']);
-
-  $sql = "INSERT INTO  trainer (name, user, pass, status,idstaff, idclass) VALUES ('$name', '$user', '$pass', '$status', '$idstaff', '$idclass')";
-    // execute query
-  mysqli_query($db, $sql);
-}
-
-?>
 <!DOCTYPE html>
 <html>
 <link rel="stylesheet" type="text/css" href="css/styleadd.css">
@@ -78,7 +60,7 @@ if (isset($_POST['upload'])) {
         <input type="radio" name="status" value="female"> External<br>
 
         <div class="clearfix">
-          <button type="submit" class="addCourse" name="upload">Add Trainer</button>
+          <button type="submit" class="addCourse" name="uploadtrainer">Add Trainer</button>
         </div>
       </div>
     </form>
