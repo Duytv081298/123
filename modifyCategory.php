@@ -10,11 +10,14 @@ $idstaff = $_SESSION['idstaff'];
 <head>
 	<title>Table V01</title>
 	<meta charset="UTF-8">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="search.css">
+
 </head>
 <body>
 	<?php 
@@ -33,7 +36,30 @@ $idstaff = $_SESSION['idstaff'];
 				<div class="table100">
 					<table>
 						<thead>
-							<tr class="table100-head">
+							<tr style="background: #36304a;">
+								<td colspan="4" >
+
+									<div class="container-3">
+										<span class="icon"><i class="fa fa-search"></i></span>
+										<input type="search" id="search" placeholder="Search..." />
+									</div>
+								</td>
+								<th colspan="2" >
+									<div style="  text-align: center;" >
+										<button type="button" class="btn btn-default" >
+											<?php
+											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+											echo "<a href='$url'>Go Back</a>"; 
+											?>
+										</button>
+									</div>
+								</th>
+							</tr>
+							<tr style="background: #2b303b; height: 5px; ">
+								<th colspan="6">
+								</th>
+							</tr>
+							<tr class="table100-head">	
 								<th class="column1">ID Category</th>
 								<th class="column2">Category's Name</th>
 								<th class="column3">Category's Description</th>
@@ -73,25 +99,25 @@ $idstaff = $_SESSION['idstaff'];
 											}
 											?>
 										</td>
-											<td class="column5"><a href="https://youtu.be/2WRN7_jj9bI"><button type="button" class="btn btn-default" >Update</button></a></td>
-											<td class="column6">
+										<td class="column5"><a href="https://youtu.be/2WRN7_jj9bI"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column6">
 											<a class="btn btn-default" href="modifyCategory.php?deletecategory=<?php echo $row["idcategory"]?>">
-  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
-											
-										</td>
-									</tr>
-									<?php
-								}
-							}
-							?>
+												<i class="fa fa-trash-o fa-lg"></i> Delete</a>
 
-						</tbody>
-					</table>
+											</td>
+										</tr>
+										<?php
+									}
+								}
+								?>
+
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
 
 
-</body>
-</html>
+	</body>
+	</html>

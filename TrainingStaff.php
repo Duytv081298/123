@@ -1,10 +1,13 @@
 <?php
 session_start();
 $name = $_SESSION['name'];
+$user = $_SESSION['user'];
+$pass = $_SESSION['pass'];
+$name = $_SESSION['name'];
 ?>
 <!DOCTYPE html>
 <html>
-<title>Manage</title>
+<title>Training Staff</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="css/font.css">

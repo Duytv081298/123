@@ -23,7 +23,7 @@ $idstaff = $_SESSION['idstaff'];
     <label for="idstaff"><b>ID Staff </b></label>
     <input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
 
-                   <div class="clearfix">
+    <div class="clearfix">
       <button type="submit" name="uploadcategory">Add Category</button>
     </div>
   </div>

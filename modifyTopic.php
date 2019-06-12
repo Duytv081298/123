@@ -8,6 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="search.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<?php 
@@ -26,6 +28,29 @@
 				<div class="table100">
 					<table>
 						<thead>
+							<tr style="background: #36304a;">
+								<td colspan="4" >
+
+									<div class="container-3">
+										<span class="icon"><i class="fa fa-search"></i></span>
+										<input type="search" id="search" placeholder="Search..." />
+									</div>
+								</td>
+								<th colspan="2" >
+									<div style="  text-align: center;" >
+										<button type="button" class="btn btn-default" >
+											<?php
+											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+											echo "<a href='$url'>Go Back</a>"; 
+											?>
+										</button>
+									</div>
+								</th>
+							</tr>
+							<tr style="background: #2b303b; height: 5px; ">
+								<th colspan="6">
+								</th>
+							</tr>
 							<tr class="table100-head">
 								<th class="column1">ID Topic</th>
 								<th class="column2">Topic's Name</th>

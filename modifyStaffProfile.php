@@ -1,51 +1,47 @@
+<?php
+session_start();
+$idstaff = $_SESSION['idstaff'];
+$user = $_SESSION['user'];
+$pass = $_SESSION['pass'];
+$name = $_SESSION['name'];
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
-	<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<link rel="stylesheet" href="css/body.css">
+    <title></title>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="css/body.css">
 </head>
 <body>
         <div class="inner">
-    		<div class="contener">
+            <div class="contener">
                
                 <h1>Your profile</h1>
 
 
                 <button class="collapsible">Your profile</button>
                 <div class="content-profile">
-                    <form method="post" class="formul">
-                        <h2 class="title-section">Informations person</h2>
+                    <form action="Updata.php" method="POST" class="formul">
 
-                        <label for="lastname" class="float">Modify your last name :</label>
-                        <input type="text" placeholder="lastname" name="lastname" id="lastname" value="<?php if (isset($lastname)) { echo $lastname; } else { echo $ini_lastname; } ?>" /><br />
-                        <?php if (isset($erreur_lastname)) { echo '<span class="form-error">' . $erreur_lastname . '</span><br /><br />'; } ?>
+                        <h2 class="title-section">Modify Information</h2>
 
-                        <label for="name" class="float">Modify your name :</label>
-                        <input type="text" placeholder="name" name="name" id="name" value="<?php if (isset($name)) { echo $name; } else { echo $ini_name; } ?>" /><br />
-                        <?php if (isset($erreur_name)) { echo '<span class="form-error">' . $erreur_name . '</span><br /><br />'; } ?>
+                        <label class="float">ID Staff :</label>
+                        <input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled style="text-align: center;"> </input><br>
 
-                        <label for="date_naissance" class="float">Modify your date of birth :</label>
-                        <input type="date" name="date_naissance" id="date_naissance" value="<?php if (isset($date_naissance)) { echo $date_naissance; } else { echo $ini_naissance; } ?>" /><br />
-                        <?php if (isset($erreur_date_naissance)) { echo '<span class="form-error">' . $erreur_date_naissance . '</span><br />'; } ?><br />
+                        <label class="float">User :</label>
+                        <input type="text" name="user" required value="<?=$user;?>"> </input><br>
 
-                        <h2 class="title-section">Authentication Information</h2>
+                        <label class="float">Password :</label>
+                        <input type="text" name="pass" required value="<?=$pass;?>"> </input><br>
 
-                        <label for="mail" class="float">Modify your e-mail address:</label>
-                        <input type="text" placeholder="E-mail" name="mail" id="mail" value="<?php if (isset($mail)) { echo $mail; } else { echo $ini_mail; } ?>" /><br />
-                        <?php if (isset($erreur_mail)) { echo '<span class="form-error">' . $erreur_mail . '</span><br /><br />'; } ?>
-
-                        <label for="mdp" class="float">Modify your password :</label>
-                        <input type="password" placeholder="password" name="pass" id="pass" value="<?php if (isset($pass)) { echo $pass; } ?>" /><br />
-                        <?php if (isset($erreur_pass)) { echo '<span class="form-error">' . $erreur_pass . '</span><br /><br />'; } ?>
-
-                        <label for="pass_verif" class="float">Verification your password :</label>
-                        <input type="password" placeholder="Confirm your password" name="pass_verif" id="pass_verif" value="<?php if (isset($pass_verif)) { echo $pass_verif; } ?>" /><br />
-                        <?php if (isset($erreur_pass_verif)) { echo '<span class="form-error">' . $erreur_pass_verif . '</span><br /><br />'; } ?><br />
-
+                        <label class="float">Name :</label>
+                        <input type="text" name="name" required value="<?=$name;?>"> </input> <br>
+                        
                         <hr />
-                        <div class="center"><input type="submit" name="formcompte" value="Modify my profile" /></div><br />
+                        <div class="center"><input type="submit" name="updataStaff" value="Modify my profile" /></div><br />
                     </form>
                 </div>
 

@@ -43,8 +43,10 @@ session_start();
         $_SESSION['role'] = 'admin';
         header('Location: admin.php');
     }else if($result2->num_rows > 0) {
-        $_SESSION['name'] = $row2['name'];
         $_SESSION['idstaff'] = $row2['idstaff'];
+        $_SESSION['user'] = $row2['user'];
+        $_SESSION['pass'] = $row2['pass'];
+        $_SESSION['name'] = $row2['name'];
         $_SESSION['logged_in'] = TRUE;
         $_SESSION['role'] = 'staff';
         header('Location: TrainingStaff.php');
