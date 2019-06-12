@@ -13,6 +13,16 @@
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 </head>
 <body>
+	<?php 
+	if(isset($_GET['deletecourse']))
+	{
+		require_once'db.php';
+		$idcourse = $_GET['deletecourse'];
+		$sql ="DELETE FROM category WHERE idcategory ='". (int)$idcourse ."'";
+		$result = $conn-> query($sql);
+		Header( "Location: modifyCourse.php" );
+	}
+	?>  
 	
 	<div class="limiter">
 		<div class="container-table100">
@@ -67,7 +77,10 @@
 
 										</td>
 										<td class="column5"><button>Update</button></td>
-										<td class="column6"><button>Delete</button></td>
+										<td class="column6">
+											<a href="modifyCategory.php?deletecourse=<?php echo $row["idcourse"]?>"> <button type="Delete">Delete</button>
+											</a>
+										</td>
 
 									</tr>
 
