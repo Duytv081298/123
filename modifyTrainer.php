@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+	<!DOCTYPE html>
 <html lang="en">
 <head>
 	<title>Table V01</title>
@@ -100,7 +100,7 @@
 											?>
 										</td>
 										<td class="column2"><?php echo $row["status"]?>*</td>
-										<td class="column5"><button>Update</button></td>
+										<td class="column5"><a href="https://youtu.be/2WRN7_jj9bI"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
 											<a class="btn btn-default" href="modifyTrainer.php?deletetrainer=<?php echo $row["idtrainer"]?>"> 
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>

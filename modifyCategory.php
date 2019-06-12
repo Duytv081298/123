@@ -73,8 +73,8 @@ $idstaff = $_SESSION['idstaff'];
 											}
 											?>
 										</td>
-										<td class="column5"><button>Update</button></td>
-										<td class="column6">
+											<td class="column5"><a href="https://youtu.be/2WRN7_jj9bI"><button type="button" class="btn btn-default" >Update</button></a></td>
+											<td class="column6">
 											<a class="btn btn-default" href="modifyCategory.php?deletecategory=<?php echo $row["idcategory"]?>">
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
 											
