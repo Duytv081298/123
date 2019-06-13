@@ -85,7 +85,7 @@ $name = $_SESSION['name'];
 </header>
 <body >
   <div class="w3-row-padding w3-center w3-margin-top">
-    <a href="">
+    <a href="modifyAdminProfile.php">
       <div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
        <div class="container">
         <div class="overlay"><span style="color: white">
@@ -100,7 +100,7 @@ $name = $_SESSION['name'];
  </a>
 
 
- <a href="">
+ <a href="modifyTrainer.php">
   <div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
    <div class="container">
     <div class="overlay">Detail</div> 
@@ -112,7 +112,7 @@ $name = $_SESSION['name'];
 </div>
 </a>
 
-<a href="">
+<a href="modifyTrainingStaff.php">
   <div class="w3-third" style="width: 31.3333333333% !important; margin: 1%">
    <div class="container">
     <div class="overlay">Detail</div> 

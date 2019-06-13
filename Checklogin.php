@@ -38,6 +38,9 @@ session_start();
 	$row3 = $result3->fetch_assoc();
 
     if ($result1->num_rows > 0) {
+        $_SESSION['idadmin'] = $row1['idadmin'];
+        $_SESSION['user'] = $row1['user'];
+        $_SESSION['pass'] = $row1['pass'];
         $_SESSION['name'] = $row1['name'];
         $_SESSION['logged_in'] = TRUE;
         $_SESSION['role'] = 'admin';
@@ -52,6 +55,9 @@ session_start();
         $_SESSION['role'] = 'staff';
         header('Location: TrainingStaff.php');
     } else if($result3->num_rows > 0) {
+        $_SESSION['idtrainer'] = $row3['idtrainer'];
+        $_SESSION['user'] = $row3['user'];
+        $_SESSION['pass'] = $row3['pass'];
         $_SESSION['name'] = $row3['name'];
         $_SESSION['logged_in'] = TRUE;
         $_SESSION['role'] = 'trainer';

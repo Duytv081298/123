@@ -1,6 +1,9 @@
 	<?php
 	session_start();
-	$name = $_SESSION['name'];?>
+	$name = $_SESSION['name'];
+	$user = $_SESSION['user'];
+	$pass = $_SESSION['pass'];
+?>
 	<!DOCTYPE html>
 	<html>
 	<head>
@@ -107,7 +110,7 @@
 
 
 
-			<a href="TrainerStaff.php">
+			<a href="modifyTrainerProfile.php">
 				<div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
 					<div class="container">
 						<div class="overlay"><span style="color: white">
