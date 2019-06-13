@@ -5,7 +5,6 @@ $user = $_SESSION['user'];
 $pass = $_SESSION['pass'];
 $name = $_SESSION['name'];
 $idadmin = $_SESSION['idadmin'];
-$idcourse = $_SESSION['idcourse'];
 ?>
 
 <?php
@@ -19,6 +18,14 @@ $idcourse = $_SESSION['idcourse'];
     Header( "Location: TrainingStaff.php" );
 
 }elseif(isset($_POST['updateCourse'])) {
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+    $idcategory = $_POST['idcategory'];
+    $idcourse = $_POST['idcourse'];
+    $sql = "UPDATE `course` SET `idcourse`='$idcourse',`name`='$name',`description`='$description', `idstaff`='$idstaff', `idcategory`= '$idcategory' WHERE `idcourse`= $idcourse";
+    mysqli_query($db, $sql);
+    Header( "Location: modifyCourse.php" );
+}elseif(isset($_POST['updateTopic'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
     $idcategory = $_POST['idcategory'];

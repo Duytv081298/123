@@ -1,3 +1,8 @@
+<?php
+session_start();
+$idstaff = $_SESSION['idstaff'];
+$idcourse = $_SESSION['idcourse'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,13 +72,16 @@
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
 								while($row = $result->fetch_assoc()) {
+									$_SESSION['idtopic'] = $row['idtopic'];
+									$idtopic = $_SESSION['idtopic'];
+
 									?>
 									<tr>
 										<td class="column1"><?php echo $row["idtopic"]?></td>
 										<td class="column2"><?php echo $row["TopicName"]?></td>
 										<td class="column3"><?php echo $row["description"]?></td>
 										<td class="column4"><?php echo $row["CourseName"]?>
-										<td class="column5"><a href="https://youtu.be/2WRN7_jj9bI"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column5"><a href="updateTopic.php"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
 											<a class="btn btn-default" href="modifyTopic.php?deletetopic=<?php echo $row["idtopic"]?>"> 
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>

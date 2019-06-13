@@ -1,7 +1,6 @@
 <?php
 session_start();
 $idstaff = $_SESSION['idstaff'];
-$idcourse = $_SESSION['idcourse'];
 ?>
 
 <!DOCTYPE html>
@@ -20,50 +19,52 @@ $idcourse = $_SESSION['idcourse'];
 				<hr>
 				<?php 
 				require_once'db.php';
-
-				$sql = "SELECT * FROM course where idcourse =".$idcourse;
-
-				$result = $conn->query($sql);
-				if ($result->num_rows > 0) {
+				
+				if(isset($_GET['updateCourse'])){
+					$idcourse = $_GET['updateCourse'];
+					$sql = "SELECT * FROM course where idcourse =".$idcourse;
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
                   // output data of each row
-					while($row = $result->fetch_assoc()) {
-						$name =  $row["name"];
-						$description =  $row["description"];
-						$idcategory =  $row["idcategory"];
-						?>
-						<label for="name"><b>ID Course </b></label> 
-						<input type="text" name="idcourse" placeholder="Enter Course's name" required value="<?=$idcourse;?>" disabled>
-
-						<label for="name"><b>Course's name</b></label> 
-						<input type="text" placeholder="Enter Course's name" name="name" required value="<?=$name;?>"></input>
-
-						<label for="description"><b>Course's Description </b></label>
-						<input type="text" placeholder="Enter Course's Description" name="description" value="<?=$description;?>"  required></input>
-
-						<label for="idstaff"><b>ID Staff </b></label>
-						<input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
-
-						<label for="idcategory"><b>Course's Category</b></label>
-						<input list="idcategory" name="idcategory" value="<?=$idcategory;?>">
-						<datalist id="idcategory">
-							<?php 
-							require_once'db.php';
-
-							$sql = "SELECT * FROM category ";
-
-							$result = $conn->query($sql);
-							if ($result->num_rows > 0) {
-				                  // output data of each row
-								while($row = $result->fetch_assoc()) {
-									?>
-									<option><?php echo $row["idcategory"]?>-<?php echo $row["name"]?></option>
-									<?php
-								}
-							}
+						while($row = $result->fetch_assoc()) {
+							$name =  $row["name"];
+							$description =  $row["description"];
+							$idcategory =  $row["idcategory"];
 							?>
-						</datalist>
+							<label for="name"><b>ID Course </b></label> 
+							<input type="text" name="idcourse" required value="<?=$idcourse;?>">
 
-						<?php
+							<label for="name"><b>Course's name</b></label> 
+							<input type="text" placeholder="Enter Course's name" name="name" required value="<?=$name;?>"></input>
+
+							<label for="description"><b>Course's Description </b></label>
+							<input type="text" placeholder="Enter Course's Description" name="description" value="<?=$description;?>"  required></input>
+
+							<label for="idstaff"><b>ID Staff </b></label>
+							<input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
+
+							<label for="idcategory"><b>Course's Category</b></label>
+							<input list="idcategory" name="idcategory" value="<?=$idcategory;?>">
+							<datalist id="idcategory">
+								<?php 
+								require_once'db.php';
+
+								$sql = "SELECT * FROM category ";
+
+								$result = $conn->query($sql);
+								if ($result->num_rows > 0) {
+				                  // output data of each row
+									while($row = $result->fetch_assoc()) {
+										?>
+										<option><?php echo $row["idcategory"]?>-<?php echo $row["name"]?></option>
+										<?php
+									}
+								}
+								?>
+							</datalist>
+
+							<?php
+						}
 					}
 				}
 				?>
@@ -73,6 +74,5 @@ $idcourse = $_SESSION['idcourse'];
 			</div>
 		</form>
 	</div>
-
 </body>
 </html>

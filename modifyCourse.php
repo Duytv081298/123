@@ -82,10 +82,8 @@ $idstaff = $_SESSION['idstaff'];
 										<td class="column2"><?php echo $row["name"]?></td>
 										<td class="column3"><?php echo $row["description"]?></td>
 										<td class="column4">
-
 											<?php 
 											require_once'db.php';
-
 											$sql1 = "SELECT topic.name FROM topic INNER JOIN course ON topic.idcourse=course.idcourse where course.idcourse =".$idcourse;
 
 											$result1 = $conn->query($sql1);
@@ -101,7 +99,7 @@ $idstaff = $_SESSION['idstaff'];
 
 
 										</td>
-										<td class="column5"><a href="updateCourse.php"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column5"><a href="updateCourse.php?updateCourse=<?php echo $row["idcourse"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
 											<a class="btn btn-default" href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>">
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
