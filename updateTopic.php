@@ -1,8 +1,6 @@
 <?php
 session_start();
 $idstaff = $_SESSION['idstaff'];
-$idcourse = $_SESSION['idcourse'];
-$idtopic = $_SESSION['idtopic'];
 ?>
 
 <!DOCTYPE html>
@@ -18,21 +16,19 @@ $idtopic = $_SESSION['idtopic'];
     <h1>Change Topic Information</h1>
     <p>Please fill out this form to change topic information.</p>
     <hr>
-
-
     <?php 
 				require_once'db.php';
-
-				$sql = "SELECT * FROM topic where idtopic =".$idtopic;
-
-				$result = $conn->query($sql);
-				if ($result->num_rows > 0) {
+				if(isset($_GET['updateTopic'])){
+					$idtopic = $_GET['updateTopic'];
+					$sql = "SELECT * FROM topic where idtopic =".$idtopic;
+					$result = $conn->query($sql);
+					if ($result->num_rows > 0) {
                   // output data of each row
-					while($row = $result->fetch_assoc()) {
-						$name =  $row["name"];
-						$description =  $row["description"];
-						$idcourse =  $row["idcourse"];
-						?>
+						while($row = $result->fetch_assoc()) {
+							$name =  $row["name"];
+							$description =  $row["description"];
+							$idcourse =  $row["idcourse"];
+							?>
 						<label for="name"><b>ID Topic </b></label> 
 						<input type="text" name="idcourse" required value="<?=$idtopic;?>" disabled>
 
@@ -50,9 +46,7 @@ $idtopic = $_SESSION['idtopic'];
 						<datalist id="idcourse">
 							<?php 
 							require_once'db.php';
-
 							$sql = "SELECT * FROM course ";
-
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
 				                  // output data of each row
@@ -66,6 +60,7 @@ $idtopic = $_SESSION['idtopic'];
 						</datalist>
 						<?php
 					}
+				}
 				}
 				?>
 				<div class="clearfix">

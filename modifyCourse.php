@@ -82,8 +82,10 @@ $idstaff = $_SESSION['idstaff'];
 										<td class="column2"><?php echo $row["name"]?></td>
 										<td class="column3"><?php echo $row["description"]?></td>
 										<td class="column4">
+
 											<?php 
 											require_once'db.php';
+
 											$sql1 = "SELECT topic.name FROM topic INNER JOIN course ON topic.idcourse=course.idcourse where course.idcourse =".$idcourse;
 
 											$result1 = $conn->query($sql1);
