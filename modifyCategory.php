@@ -8,14 +8,14 @@ $idstaff = $_SESSION['idstaff'];
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Table V01</title>
+	<title>Modify Category</title>
 	<meta charset="UTF-8">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 	<link rel="stylesheet" type="text/css" href="search.css">
 
 </head>
@@ -99,7 +99,7 @@ $idstaff = $_SESSION['idstaff'];
 											}
 											?>
 										</td>
-										<td class="column5"><a href="https://youtu.be/2WRN7_jj9bI"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column5"><a href="updateCategory.php?updateCategory=<?php echo $row["idcategory"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
 											<a class="btn btn-default" href="modifyCategory.php?deletecategory=<?php echo $row["idcategory"]?>">
 												<i class="fa fa-trash-o fa-lg"></i> Delete</a>

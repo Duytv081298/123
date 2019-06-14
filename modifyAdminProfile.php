@@ -19,7 +19,7 @@ $idadmin = $_SESSION['idadmin'];
                 <h1>Your profile</h1>
                 <button class="collapsible">Your profile</button>
                 <div class="content-profile">
-                    <form action="adminUpdate.php" method="POST" class="formul">
+                    <form action="update.php" method="POST" class="formul">
 
                         <h2 class="title-section">Modify Information</h2>
                         <?php 

@@ -17,10 +17,10 @@ $idstaff = $_SESSION['idstaff'];
 </head>
 <body>
 	<?php 
-	if(isset($_GET['deletecourse']))
+	if(isset($_GET['deletetopic']))
 	{
 		require_once'db.php';
-		$idtopic = $_GET['deletecourse'];
+		$idtopic = $_GET['deletetopic'];
 		$sql ="DELETE FROM topic WHERE idtopic ='". (int)$idtopic ."'";
 		$result = $conn-> query($sql);
 		Header( "Location: modifyTopic.php" );
@@ -45,7 +45,7 @@ $idstaff = $_SESSION['idstaff'];
 										<button type="button" class="btn btn-default" >
 											<?php
 											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-											echo "<a href='$url'>Go Back</a>"; 
+											echo "<a href='TrainingStaff.php'>Go Back</a>"; 
 											?>
 										</button>
 									</div>
@@ -71,8 +71,7 @@ $idstaff = $_SESSION['idstaff'];
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
 								while($row = $result->fetch_assoc()) {
-									$_SESSION['idtopic'] = $row['idtopic'];
-									$idtopic = $_SESSION['idtopic'];
+									$idtopic = $row['idtopic'];
 									?>
 									<tr>
 										<td class="column1"><?php echo $row["idtopic"]?></td>

@@ -32,7 +32,7 @@ $idstaff = $_SESSION['idstaff'];
 							$idcategory =  $row["idcategory"];
 							?>
 							<label for="name"><b>ID Course </b></label> 
-							<input type="text" name="idcourse" required value="<?=$idcourse;?>">
+							<input type="text" name="idcourse" required value="<?=$idcourse;?>" disabled>
 
 							<label for="name"><b>Course's name</b></label> 
 							<input type="text" placeholder="Enter Course's name" name="name" required value="<?=$name;?>"></input>

@@ -11,7 +11,7 @@ $idstaff = $_SESSION['idstaff'];
 <link rel="stylesheet" type="text/css" href="css/styleadd.css">
 <body>
 	<div class="content" style="padding: 50px 200px 50px 200px">
-<form action="add.php" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
+<form action="update.php" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
   <div class="container">
     <h1>Change Topic Information</h1>
     <p>Please fill out this form to change topic information.</p>
@@ -30,13 +30,13 @@ $idstaff = $_SESSION['idstaff'];
 							$idcourse =  $row["idcourse"];
 							?>
 						<label for="name"><b>ID Topic </b></label> 
-						<input type="text" name="idcourse" required value="<?=$idtopic;?>" disabled>
+						<input type="text" name="idtopic" required value="<?=$idtopic;?>" disabled>
 
-						<label for="name"><b>Course's name</b></label> 
-						<input type="text" placeholder="Enter Course's name" name="name" required value="<?=$name;?>"></input>
+						<label for="name"><b>Topic's name</b></label> 
+						<input type="text" placeholder="Enter Topic's name" name="name" required value="<?=$name;?>"></input>
 
-						<label for="description"><b>Course's Description </b></label>
-						<input type="text" placeholder="Enter Course's Description" name="description" value="<?=$description;?>"  required></input>
+						<label for="description"><b>Topic's Description </b></label>
+						<input type="text" placeholder="Enter Topic's Description" name="description" value="<?=$description;?>"  required></input>
 
 						<label for="idstaff"><b>ID Staff </b></label>
 						<input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
@@ -64,7 +64,7 @@ $idstaff = $_SESSION['idstaff'];
 				}
 				?>
 				<div class="clearfix">
-					<button type="submit" class="addCourse" name="updateTopic">Update Course</button>
+					<button type="submit" class="addTopic" name="updateTopic">Update Topic</button>
 				</div>
 			</div>
 		</form>
