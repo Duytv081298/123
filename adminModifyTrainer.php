@@ -95,9 +95,9 @@ $idadmin = $_SESSION['idadmin'];
 										<td class="column3"><?php echo $row["user"]?></td>
 										<td class="column4"><?php echo $row["pass"]?></td>
 										<td class="column4"><?php echo $row["status"]?></td>
-										<td class="column5"><a href="updateTrainerAdmin.php?updateTrainerAdmin=<?php echo $row["idtrainer"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column5"><a href="updateTrainerAdmin.php?adminUpdateTrainer=<?php echo $row["idtrainer"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
-											<a class="btn btn-default" href="updateTrainerAdmin.php?deletetrainer=<?php echo $row["idtrainer"]?>">
+											<a class="btn btn-default" href="adminModifyTrainer.php?deletetrainer=<?php echo $row["idtrainer"]?>">
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
 											
 										</td>

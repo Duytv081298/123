@@ -1,6 +1,6 @@
 <?php
 session_start();
-$idstaff = $_SESSION['idstaff'];
+$idadmin = $_SESSION['idadmin'];
 ?>
 
 <!DOCTYPE html>
@@ -12,20 +12,20 @@ $idstaff = $_SESSION['idstaff'];
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 	<link rel="stylesheet" type="text/css" href="search.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<?php 
-	if(isset($_GET['deletecourse']))
+	if(isset($_GET['deletestaff']))
 	{
 		require_once'db.php';
-		$idcourse = $_GET['deletecourse'];
-		$sql ="DELETE FROM course WHERE idcourse ='". (int)$idcourse ."'";
+		$idstaff = $_GET['deletestaff'];
+		$sql ="DELETE FROM staff WHERE idstaff ='". (int)$idstaff ."'";
 		$result = $conn-> query($sql);
-		Header( "Location: modifyCourse.php" );
-	}
+		Header( "Location: adminModifyStaff.php" );
+	} 
 	?>  
 	<div class="limiter">
 		<div class="container-table100">
@@ -41,12 +41,23 @@ $idstaff = $_SESSION['idstaff'];
 										<input type="search" id="search" placeholder="Search..." />
 									</div>
 								</td>
-								<th colspan="2" >
+								<th colspan="1" >
+									<div style="  text-align: center;" >
+										<button type="button" style="width: 91px !important;height: 34px !important;" class="btn btn-default"  >
+											<?php
+											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
+											echo "<a href='admin.php'>Go Back</a>"; 
+											?>
+										</button>
+									</div>
+								</th>
+
+								<th colspan="1" >
 									<div style="  text-align: center;" >
 										<button type="button" class="btn btn-default" >
 											<?php
 											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-											echo "<a href='TrainingStaff.php'>Go Back</a>"; 
+											echo "<a href='addstaffadmin.php'>Add</a>"; 
 											?>
 										</button>
 									</div>
@@ -57,10 +68,10 @@ $idstaff = $_SESSION['idstaff'];
 								</th>
 							</tr>
 							<tr class="table100-head">
-								<th class="column1">ID Course</th>
-								<th class="column2">Course's Name</th>
-								<th class="column3">Course's Description</th>
-								<th class="column4">Topic</th>
+								<th class="column1">ID Staff</th>
+								<th class="column2">Staff's Name</th>
+								<th class="column3">User Name</th>
+								<th class="column4">Password</th>
 								<th class="column5">Update</th>
 								<th class="column6">Delete</th>
 								
@@ -69,41 +80,22 @@ $idstaff = $_SESSION['idstaff'];
 						<tbody>
 							<?php 
 							require_once'db.php';
-							$sql = "SELECT * FROM course ";
+							$sql = "SELECT * FROM staff ";
 							$result = $conn->query($sql);
 							if ($result->num_rows > 0) {
 							    // output data of each row
 								while($row = $result->fetch_assoc()) {
-									$_SESSION['idcourse'] = $row['idcourse'];
-									$idcourse = $_SESSION['idcourse'];
+									$_SESSION['idstaff'] = $row['idstaff'];
+									$idstaff = $_SESSION['idstaff'];
 									?>
 									<tr>
-										<td class="column1"><?php echo $row["idcourse"]?></td>
+										<td class="column1"><?php echo $row["idstaff"]?></td>
 										<td class="column2"><?php echo $row["name"]?></td>
-										<td class="column3"><?php echo $row["description"]?></td>
-										<td class="column4">
-
-											<?php 
-											require_once'db.php';
-
-											$sql1 = "SELECT topic.name FROM topic INNER JOIN course ON topic.idcourse=course.idcourse where course.idcourse =".$idcourse;
-
-											$result1 = $conn->query($sql1);
-											if ($result1->num_rows > 0) {
-							    // output data of each row
-												while($row1 = $result1->fetch_assoc()) {
-													?>
-													<span><?php echo $row1["name"]?></span>
-													<?php
-												}
-											}
-											?>
-
-
-										</td>
-										<td class="column5"><a href="updateCourse.php?updateCourse=<?php echo $row["idcourse"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column3"><?php echo $row["user"]?></td>
+										<td class="column4"><?php echo $row["pass"]?></td>
+										<td class="column5"><a href="updateStaffAdmin.php?adminUpdateStaff=<?php echo $row["idstaff"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
-											<a class="btn btn-default" href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>">
+											<a class="btn btn-default" href="adminModifyStaff.php?deletestaff=<?php echo $row["idstaff"]?>">
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
 											
 										</td>
@@ -116,6 +108,10 @@ $idstaff = $_SESSION['idstaff'];
 							?>
 
 						</tbody>
+						<tr>
+							<td></td>
+							<td colspan="7" style="color: red">Type of Work: 1. Internal 2.Extenal</td>
+						</tr>
 					</table>
 				</div>
 			</div>

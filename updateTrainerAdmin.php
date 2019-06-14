@@ -20,21 +20,23 @@ $idadmin = $_SESSION['idadmin'];
 				<?php 
 				require_once'db.php';
 				
-				if(isset($_GET['updateTrainerAdmin'])){
-					$idtrainer = $_GET['updateTrainerAdmin'];
+				if(isset($_GET['adminUpdateTrainer'])){
+					$idtrainer = $_GET['adminUpdateTrainer'];
 					$sql = "SELECT * FROM trainer where idtrainer =".$idtrainer;
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
                   // output data of each row
 						while($row = $result->fetch_assoc()) {
-							$idtrainer =  $row["idtrainer"];
+
+							$_SESSION['idtrainer'] = $row['idtrainer'];
+							$idtrainer = $_SESSION['idtrainer'];
 							$user =  $row["user"];
 							$pass =  $row["pass"];
 							$name =  $row["name"];
 							$status =  $row["status"];
 							?>
 							<label for="idtrainer"><b>ID Trainer </b></label> 
-							<input type="text" name="idtrainer" required value="<?=$idtrainer;?>" disabled>
+							<input type="text" name="idtrainer" required value="<?=$idtrainer;?>" disabled></input>
 
 							<label for="user"><b>User name</b></label> 
 							<input type="text" placeholder="Enter User name" name="user" required value="<?=$user;?>"></input>
@@ -51,8 +53,6 @@ $idadmin = $_SESSION['idadmin'];
 							<label for="status"><b>Enter Trainer's Status</b></label><br/>
         					<input type="radio" name="status" value="male"> Internal<br>
         					<input type="radio" name="status" value="female"> External<br>
-								
-
 							<?php
 						}
 					}
