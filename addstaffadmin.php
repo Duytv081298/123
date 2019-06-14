@@ -8,7 +8,7 @@ $idadmin = $_SESSION['idadmin'];
 <link rel="stylesheet" type="text/css" href="css/styleadd.css">
 <body>
   <div class="content" style="padding: 50px 200px 50px 200px">
-    <form action="adminadd.php" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
+    <form action="add.php" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
       <div class="container">
         <h1>Add Staff</h1>
         <p>Please fill in this form to add Staff.</p>
@@ -20,7 +20,6 @@ $idadmin = $_SESSION['idadmin'];
         <label for="name"><b>User: </b></label> <br>
         <input type="text" placeholder="Enter staff's email" name="user" required></input>
 
-        
         <br><br>
 
         <label for="pass"><b>Enter staff's password</b></label><br/>

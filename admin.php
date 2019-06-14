@@ -1,6 +1,6 @@
 <?php
 session_start();
-$name = $_SESSION['name'];
+$idadmin = $_SESSION['idadmin'];
 ?>
 <!DOCTYPE html>
 <html>
@@ -84,13 +84,29 @@ $name = $_SESSION['name'];
  </div>
 </header>
 <body >
+
+
+
   <div class="w3-row-padding w3-center w3-margin-top">
     <a href="modifyAdminProfile.php">
       <div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
        <div class="container">
+        <?php 
+              require_once'db.php';
+              $sql = "SELECT * FROM admin WHERE `idadmin`= $idadmin";
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0) {
+                  // output data of each row
+                while($row = $result->fetch_assoc()) {
+                  $name =  $row["name"];
+                  ?>
         <div class="overlay"><span style="color: white">
           Hello <?php echo $name;  ?>
         </span></div> 
+        <?php
+                }
+              }
+              ?>
         <div class="w3-card w3-container" style="box-sizing: border-box; margin: 0 ">
          <b><h1>User Profile</h1></b><br>
          <img src="images/admin.png" alt="Los Angeles" style="width:30%;padding-bottom: 20%; ">

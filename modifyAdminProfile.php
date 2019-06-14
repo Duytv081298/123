@@ -1,9 +1,6 @@
 <?php
 session_start();
-        $idadmin = $_SESSION['idadmin'];
-        $user = $_SESSION['user'];
-        $pass = $_SESSION['pass'];
-        $name = $_SESSION['name'];
+$idadmin = $_SESSION['idadmin'];
 ?>
 
 
@@ -16,17 +13,26 @@ session_start();
         <link rel="stylesheet" href="css/body.css">
 </head>
 <body>
+
         <div class="inner">
             <div class="contener">
-               
                 <h1>Your profile</h1>
-
-
                 <button class="collapsible">Your profile</button>
                 <div class="content-profile">
-                    <form action="update.php" method="POST" class="formul">
+                    <form action="adminUpdate.php" method="POST" class="formul">
 
                         <h2 class="title-section">Modify Information</h2>
+                        <?php 
+              require_once'db.php';
+              $sql = "SELECT * FROM admin WHERE `idadmin`= $idadmin";
+              $result = $conn->query($sql);
+              if ($result->num_rows > 0) {
+                  // output data of each row
+                while($row = $result->fetch_assoc()) {
+                  $name =  $row["name"];
+                  $user =  $row["user"];
+                  $pass =  $row["pass"];
+                  ?>
 
                         <label class="float">ID admin :</label>
                         <input type="text" name="idadmin" required value="<?=$idadmin;?>" disabled style="text-align: center;"> </input><br>
@@ -41,7 +47,11 @@ session_start();
                         <input type="text" name="name" required value="<?=$name;?>"> </input> <br>
                         
                         <hr />
-                        <div class="center"><input type="submit" name="update" value="Modify my profile" /></div><br />
+                        <div class="center"><input type="submit" name="updateAdminProfile" value="Modify my profile" /></div><br />
+                        <?php
+                }
+              }
+              ?>
                     </form>
                 </div>
 

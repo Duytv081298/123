@@ -165,9 +165,9 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <h4>Courses</h4>
     </div>
   </div>
-	</a>
+  </a>
 
-	<a href="modifyTopic.php">
+  <a href="modifyTopic.php">
     <div class="w3-quarter hvr-wobble-vertical">
       <div class="w3-container w3-blue w3-padding-16">
         <div class="w3-left"><i class="fa fa-address-book-o w3-xxxlarge"></i></div>
@@ -186,7 +186,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     </div>
     </a>
     <a href="modifyTrainer.php">    
-    	<div class="w3-quarter hvr-wobble-vertical">
+      <div class="w3-quarter hvr-wobble-vertical">
       <div class="w3-container w3-teal w3-padding-16">
         <div class="w3-left"><i class="fa fa-user w3-xxxlarge"></i></div>
         <div class="w3-right">
