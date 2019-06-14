@@ -100,7 +100,7 @@ $name = $_SESSION['name'];
  </a>
 
 
- <a href="modifyTrainer.php">
+ <a href="adminModifyTrainer.php">
   <div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
    <div class="container">
     <div class="overlay">Detail</div> 
@@ -112,7 +112,7 @@ $name = $_SESSION['name'];
 </div>
 </a>
 
-<a href="modifyTrainingStaff.php">
+<a href="adminModifyStaff.php">
   <div class="w3-third" style="width: 31.3333333333% !important; margin: 1%">
    <div class="container">
     <div class="overlay">Detail</div> 

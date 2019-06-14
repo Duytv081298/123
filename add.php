@@ -63,4 +63,14 @@ elseif (isset($_POST['uploadtrainer'])) {
   mysqli_query($db, $sql);
   Header( "Location: modifyTrainer.php" );
   }
+  elseif (isset($_POST['uploadtraineradmin'])) {
+  $name = mysqli_real_escape_string($db, $_POST['name']);
+  $user = mysqli_real_escape_string($db, $_POST['user']);
+  $pass = mysqli_real_escape_string($db, $_POST['pass']);
+  $status = mysqli_real_escape_string($db, $_POST['status']);
+  $idclass = mysqli_real_escape_string($db, $_POST['idclass']);
+  $sql = "INSERT INTO  trainer (name, user, pass, status,idstaff, idclass) VALUES ('$name', '$user', '$pass', '$status', '$idstaff', '$idclass')";
+  mysqli_query($db, $sql);
+  Header( "Location: adminModifyTrainer.php" );
+  }
 ?>

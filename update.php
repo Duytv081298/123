@@ -32,4 +32,13 @@ $idadmin = $_SESSION['idadmin'];
     $sql = "UPDATE `topic` SET `idtopic`='$idtopic',`name`='$name',`description`='$description', `idstaff`='$idstaff', `idcourse`= '$idcourse' WHERE `idtopic`= $idtopic";
     mysqli_query($db, $sql);
 
+}elseif(isset($_POST['updateTrainerAdmin'])) {
+        $idtrainer =  $_POST["idtrainer"];
+        $user =  $_POST["user"];
+        $pass =  $_POST["pass"];
+        $name =  $_POST["name"];
+        $status =  $_POST["status"];
+    $sql = "UPDATE `trainer` SET `idtrainer`='$idtrainer',`name`='$name',`user`='$user', `pass`='$pass', `status`= '$status' WHERE `idtrainer`= $idtrainer";
+    mysqli_query($db, $sql);
+
 }
