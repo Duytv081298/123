@@ -30,7 +30,7 @@ $idstaff = $_SESSION['idstaff'];
 							$idcourse =  $row["idcourse"];
 							?>
 						<label for="name"><b>ID Topic </b></label> 
-						<input type="text" name="idtopic" required value="<?=$idtopic;?>" disabled>
+						<input type="text" name="idtopic" required value="<?=$idtopic;?>" readonly="true">
 
 						<label for="name"><b>Topic's name</b></label> 
 						<input type="text" placeholder="Enter Topic's name" name="name" required value="<?=$name;?>"></input>
@@ -39,7 +39,7 @@ $idstaff = $_SESSION['idstaff'];
 						<input type="text" placeholder="Enter Topic's Description" name="description" value="<?=$description;?>"  required></input>
 
 						<label for="idstaff"><b>ID Staff </b></label>
-						<input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
+						<input type="text" name="idstaff" required value="<?=$idstaff;?>" readonly="true"> </input>
 
 						<label for="idcourse"><b>Topic's Course</b></label>
 						<input list="idcourse" name="idcourse" value="<?=$idcourse;?>">

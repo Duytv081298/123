@@ -2,7 +2,6 @@
 session_start();
 $idstaff = $_SESSION['idstaff'];
 ?>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +18,6 @@ $idstaff = $_SESSION['idstaff'];
 				<hr>
 				<?php 
 				require_once'db.php';
-				
 				if(isset($_GET['updateCategory'])){
 					$idcategory = $_GET['updateCategory'];
 					$sql = "SELECT * FROM category where idcategory =".$idcategory;
@@ -30,8 +28,8 @@ $idstaff = $_SESSION['idstaff'];
 							$name =  $row["name"];
 							$description =  $row["description"];
 							?>
-							<label for="name"><b>ID Category </b></label> 
-							<input type="text" name="idcategory" required value="<?=$idcategory;?>" disabled>
+							<label for="idcategory"><b>ID Category </b></label> 
+							<input type="text" name="idcategory" required value="<?=$idcategory;?>"readonly="true">
 
 							<label for="name"><b>Category's name</b></label> 
 							<input type="text" placeholder="Enter Category's name" name="name" required value="<?=$name;?>"></input>
@@ -40,7 +38,7 @@ $idstaff = $_SESSION['idstaff'];
 							<input type="text" placeholder="Enter Category's Description" name="description" value="<?=$description;?>"  required></input>
 
 							<label for="idstaff"><b>ID Staff </b></label>
-							<input type="text" name="idstaff" required value="<?=$idstaff;?>" disabled> </input>
+							<input type="text" name="idstaff" required value="<?=$idstaff;?>" readonly="true"> </input>
 							<?php
 						}
 					}

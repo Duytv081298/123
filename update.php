@@ -20,7 +20,7 @@ elseif(isset($_POST['updateCourse'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
     $idcategory = $_POST['idcategory'];
-    $idcourse = $_POST['idcourse'];
+    $idcourse = $_POST['id'];
     $sql = "UPDATE `course` SET `idcourse`='$idcourse',`name`='$name',`description`='$description', `idstaff`='$idstaff', `idcategory`= '$idcategory' WHERE `idcourse`= $idcourse";
     mysqli_query($db, $sql);
     Header( "Location: modifyCourse.php" );
@@ -35,6 +35,7 @@ elseif(isset($_POST['updateTopic'])) {
     $idcourse = $_POST['idcourse'];
     $sql = "UPDATE `topic` SET `idtopic`='$idtopic',`name`='$name',`description`='$description', `idstaff`='$idstaff', `idcourse`= '$idcourse' WHERE `idtopic`= $idtopic";
     mysqli_query($db, $sql);
+    Header( "Location: modifyTopic.php" );
 }  
 
 // Staff Update Category
@@ -44,9 +45,42 @@ elseif(isset($_POST['updateCategory'])) {
     $name = $_POST['name'];
     $description = $_POST['description'];
     $idcategory = $_POST['idcategory'];
-    $sql = "UPDATE `category` SET `idcategory`='$idcategory',`name`='$name',`description`='$description', `idstaff`='$idstaff', WHERE `idcategory`= $idcategory";
+    $sql = "UPDATE `category` SET `idcategory`='$idcategory',`name`='$name',`description`='$description', `idstaff`='$idstaff'WHERE `idcategory`= $idcategory";
     mysqli_query($db, $sql);
+    Header( "Location: modifyCategory.php" );
  }  
+
+
+// Staff Update Trainee
+
+
+ elseif(isset($_POST['updateTrainee'])) {
+    $idstaff = $_SESSION['idstaff'];
+    $idtrainee =  $_POST["idtrainee"];
+    $name =  $_POST["name"];
+    $age =  $_POST["age"];
+    $mainlanguage =  $_POST["mainlanguage"];
+    $experience =  $_POST["experience"];
+    $idclass =  $_POST["idclass"];
+    $sql = "UPDATE `trainee` SET `idtrainee`= '$idtrainee',`name`='$name',`age`= '$age',`mainlanguage`='$mainlanguage',`experience`='$experience',`idclass`='$idclass', `idstaff`='$idstaff' WHERE `idtrainee`= $idtrainee";
+    mysqli_query($db, $sql);
+    Header( "Location: modifyTrainee.php" );
+    
+}
+
+// Staff Update Trainer
+
+elseif(isset($_POST['updateTrainer'])) {
+        $idstaff = $_SESSION['idstaff'];        
+        $idtrainer =  $_POST["idtrainer"];
+        $name =  $_POST["name"];
+        $idclass =  $_POST["idclass"];
+        $status =  $_POST["status"];
+    $sql = "UPDATE `trainer` SET `idtrainer`= '$idtrainer',`name`='$name',`idclass`= '$idclass',`status`='$status',`idstaff`='$idstaff' WHERE `idtrainer`= $idtrainer";
+    mysqli_query($db, $sql);
+    Header( "Location: modifyTrainer.php" );
+    
+}
 
 // Admin Update Trainer
 

@@ -1,8 +1,6 @@
 	<?php
 	session_start();
-	$name = $_SESSION['name'];
-	$user = $_SESSION['user'];
-	$pass = $_SESSION['pass'];
+	$idtrainer = $_SESSION['idtrainer'];
 ?>
 	<!DOCTYPE html>
 	<html>

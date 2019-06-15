@@ -20,56 +20,57 @@ $idstaff = $_SESSION['idstaff'];
 				<?php 
 				require_once'db.php';
 				
-				if(isset($_GET['updateCourse'])){
-					$idcourse = $_GET['updateCourse'];
-					$sql = "SELECT * FROM course where idcourse =".$idcourse;
+				if(isset($_GET['updateTrainer'])){
+					$idtrainer = $_GET['updateTrainer'];
+					$sql = "SELECT * FROM trainer where idtrainer =".$idtrainer;
 					$result = $conn->query($sql);
 					if ($result->num_rows > 0) {
                   // output data of each row
 						while($row = $result->fetch_assoc()) {
+							$idtrainer =  $row["idtrainer"];
 							$name =  $row["name"];
-							$description =  $row["description"];
-							$idcategory =  $row["idcategory"];
+							$idstaff =  $row["idstaff"];
+							$idclass =  $row["idclass"];
 							?>
-							<label for="name"><b>ID Course </b></label>
-							<input type="text" name="id" value="<?=$idcourse;?>" readonly="true"></input>
+							<label for="name"><b>ID Trainer </b></label>
+							<input type="text" name="idtrainer" value="<?=$idtrainer;?>" readonly="true"></input>
 
-							<label for="name"><b>Course's name</b></label> 
-							<input type="text" placeholder="Enter Course's name" name="name" required value="<?=$name;?>"></input>
-
-							<label for="description"><b>Course's Description </b></label>
-							<input type="text" placeholder="Enter Course's Description" name="description" value="<?=$description;?>"  required></input>
+							<label for="name"><b>Trainee's name</b></label> 
+							<input type="text" placeholder="Enter Trainee's name" name="name" required value="<?=$name;?>"></input>
 
 							<label for="idstaff"><b>ID Staff </b></label>
 							<input type="text" name="idstaff" required value="<?=$idstaff;?>" readonly ="true"> </input>
 
-							<label for="idcategory"><b>Course's Category</b></label>
-							<input list="idcategory" name="idcategory" value="<?=$idcategory;?>">
-							<datalist id="idcategory">
+							<label for="idclass"><b>Class</b></label>
+							<input list="idclass" name="idclass" value="<?=$idclass;?>">
+							<datalist id="idclass">
 								<?php 
 								require_once'db.php';
 
-								$sql = "SELECT * FROM category ";
+								$sql = "SELECT * FROM class ";
 
 								$result = $conn->query($sql);
 								if ($result->num_rows > 0) {
 				                  // output data of each row
 									while($row = $result->fetch_assoc()) {
 										?>
-										<option><?php echo $row["idcategory"]?>-<?php echo $row["name"]?></option>
+										<option><?php echo $row["idclass"]?>-<?php echo $row["name"]?></option>
 										<?php
 									}
 								}
 								?>
 							</datalist>
-
 							<?php
 						}
 					}
 				}
 				?>
+				<br/><br/>
+				<label for="status"><b>Enter Trainer's Status</b></label><br/>
+				<input type="radio" name="status" value="male"> Internal<br>
+				<input type="radio" name="status" value="female"> External<br>
 				<div class="clearfix">
-					<button type="submit" class="addCourse" name="updateCourse">Update Course</button>
+					<button type="submit" class="addCourse" name="updateTrainer">Update Trainer</button>
 				</div>
 			</div>
 		</form>

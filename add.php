@@ -46,11 +46,11 @@ elseif (isset($_POST['uploadtopic'])) {
 elseif (isset($_POST['uploadtrainee'])) {
     $idstaff = $_SESSION['idstaff'];
     $name = mysqli_real_escape_string($db, $_POST['name']);
-    $dayofbirth = mysqli_real_escape_string($db, $_POST['dayofbirth']);
+    $age = mysqli_real_escape_string($db, $_POST['age']);
     $mainlanguage = mysqli_real_escape_string($db, $_POST['mainlanguage']);
     $experience = mysqli_real_escape_string($db, $_POST['experience']);
     $idclass = mysqli_real_escape_string($db, $_POST['idclass']);
-    $sql = "INSERT INTO  Trainee (name, dateofbirth, mainlanguage, experience,idstaff, idclass) VALUES ('$name', '$dayofbirth', '$mainlanguage', '$experience', '$idstaff', '$idclass')";
+    $sql = "INSERT INTO  Trainee (name, age, mainlanguage, experience,idstaff, idclass) VALUES ('$name', '$age', '$mainlanguage', '$experience', '$idstaff', '$idclass')";
     mysqli_query($db, $sql);
     Header( "Location: modifyTrainee.php" );
   }

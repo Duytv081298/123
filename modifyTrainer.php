@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.4.0/css/perfect-scrollbar.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/detail.css">
 	<link rel="stylesheet" type="text/css" href="search.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -41,7 +41,7 @@
 										<button type="button" class="btn btn-default" >
 											<?php
 											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-											echo "<a href='$url'>Go Back</a>"; 
+											echo "<a href='TrainingStaff.php'>Go Back</a>"; 
 											?>
 										</button>
 									</div>
@@ -125,7 +125,7 @@
 											?>
 										</td>
 										<td class="column2"><?php echo $row["status"]?>*</td>
-										<td class="column5"><a href="https://youtu.be/2WRN7_jj9bI"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column5"><a href="updateTrainer.php?updateTrainer=<?php echo $row["idtrainer"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
 											<a class="btn btn-default" href="modifyTrainer.php?deletetrainer=<?php echo $row["idtrainer"]?>"> 
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>

@@ -49,7 +49,7 @@ $idstaff = $_SESSION['idstaff'];
 										<button type="button" class="btn btn-default" >
 											<?php
 											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-											echo "<a href='$url'>Go Back</a>"; 
+											echo "<a href='TrainingStaff.php'>Go Back</a>"; 
 											?>
 										</button>
 									</div>

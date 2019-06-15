@@ -18,15 +18,15 @@ $idstaff = $_SESSION['idstaff'];
     <input type="text" placeholder="Enter Your Full Name" name="name" required>
 
 
-    <label for="dayofbirth"><b>Date of birth</b></label> 
-    <input type="date" name="dayofbirth" required>
+    <label for="age"><b>Date of birth</b></label> 
+    <input type="text" placeholder="Enter age" name="age" required>
 
     </br></br>
     <label for="mainlanguage"><b>Main Programming Language</b></label> 
     <input type="text" placeholder="Enter main programming language" name="mainlanguage" required>
 
     <label for="experience"><b>Experience details</b></label>
-    <textarea type="text" placeholder="Enter Your Experience" name="experience" required></textarea>
+    <input type="text" placeholder="Enter Your Experience" name="experience" required>
     <br/>
     <br/>
     <label for="idstaff"><b>ID Staff </b></label>
