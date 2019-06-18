@@ -109,7 +109,24 @@
 
 
 			<a href="modifyTrainerProfile.php">
+
 				<div class="w3-third" style="width: 31.3333333333% !important ; margin: 1%">
+					<?php 
+        require_once'db.php';
+        $sql = "SELECT * FROM trainer WHERE `idtrainer`= $idtrainer";
+        $result = $conn->query($sql);
+        if ($result->num_rows > 0) {
+                  // output data of each row
+          while($row = $result->fetch_assoc()) {
+            $name =  $row["name"];
+            ?>
+            <div class="overlay"><span style="color: white">
+              Hello <?php echo $name;  ?>
+            </span></div> 
+            <?php
+          }
+        }
+        ?>
 					<div class="container">
 						<div class="overlay"><span style="color: white">
 							Hello <?php echo $name;  ?>
