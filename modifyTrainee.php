@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Table V01</title>
+	<title>Modify Trainee</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -79,7 +79,7 @@
 										<td class="column2"><?php echo $row["name"]?></td>
 
 
-										<td class="column2">
+										<td class="column2" style="padding: 25px; ">
 											<?php 
 											require_once'db.php';
 
@@ -88,7 +88,7 @@
 											if ($result1->num_rows > 0) {
 												while($row1 = $result1->fetch_assoc()) {
 													?>
-													<span><?php echo $row1["Class"]?>.  </span>
+													<span><?php echo $row1["Class"]?><br> <br>  </span>
 													<?php
 												}
 											}
@@ -104,7 +104,7 @@
 											if ($result2->num_rows > 0) {
 												while($row2 = $result2->fetch_assoc()) {
 													?>
-													<span><?php echo $row2["Topic"]?>.  </span>
+													<span><?php echo $row2["Topic"]?> <br><br>  </span>
 													<?php
 												}
 											}
@@ -120,7 +120,7 @@
 											if ($result3->num_rows > 0) {
 												while($row3 = $result3->fetch_assoc()) {
 													?>
-													<span><?php echo $row3["Course"]?>.  </span>
+													<span><?php echo $row3["Course"]?><br><br>  </span>
 													<?php
 												}
 											}
@@ -134,7 +134,7 @@
 											if ($result4->num_rows > 0) {
 												while($row4 = $result4->fetch_assoc()) {
 													?>
-													<span><?php echo $row4["Trainer"]?>.  </span>
+													<span><?php echo $row4["Trainer"]?><br><br>  </span>
 													<?php
 												}
 											}
