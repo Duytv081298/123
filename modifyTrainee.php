@@ -83,7 +83,7 @@
 											<?php 
 											require_once'db.php';
 
-											$sql1 = "SELECT  idtrainee,trainee.`name` as Name, class.`name` as Class FROM trainee INNER JOIN class ON class.idclass=class.idclass WHERE trainee.idtrainee =".$idtrainee;
+											$sql1 = "SELECT  idtrainee,trainee.`name` as Name, class.`name` as Class FROM trainee INNER JOIN class ON trainee.idclass=class.idclass WHERE trainee.idtrainee =".$idtrainee;
 											$result1 = $conn->query($sql1);
 											if ($result1->num_rows > 0) {
 												while($row1 = $result1->fetch_assoc()) {
@@ -99,7 +99,7 @@
 											<?php 
 											require_once'db.php';
 
-											$sql2 = "SELECT DISTINCT idtrainee,trainee.`name` as Name, class.`name` as Class,topic.`name` as Topic FROM trainee INNER JOIN class ON class.idclass=class.idclass INNER JOIN topic ON topic.idtopic=class.idtopic  WHERE idtrainee =".$idtrainee;
+											$sql2 = "SELECT DISTINCT idtrainee,trainee.`name` as Name, class.`name` as Class,topic.`name` as Topic FROM trainee INNER JOIN class ON trainee.idclass=class.idclass INNER JOIN topic ON topic.idtopic=class.idtopic  WHERE idtrainee =".$idtrainee;
 											$result2 = $conn->query($sql2);
 											if ($result2->num_rows > 0) {
 												while($row2 = $result2->fetch_assoc()) {
@@ -115,7 +115,9 @@
 										<td class="column2">
 											<?php 
 											require_once'db.php';
-											$sql3 = "SELECT DISTINCT idtrainee,trainee.`name` as Name, class.`name` as Class,course.`name` as Course FROM trainee INNER JOIN class ON class.idclass=class.idclass INNER JOIN course ON course.idcourse=class.idcourse WHERE idtrainee = ".$idtrainee;
+											$sql3 = "SELECT DISTINCT idtrainee,trainee.`name` as Name, class.`name` as Class,course.`name` as Course 
+											FROM trainee 
+											INNER JOIN class ON trainee.idclass=class.idclass INNER JOIN course ON course.idcourse=class.idcourse WHERE idtrainee = ".$idtrainee ;
 											$result3 = $conn->query($sql3);
 											if ($result3->num_rows > 0) {
 												while($row3 = $result3->fetch_assoc()) {
@@ -129,12 +131,12 @@
 										<td class="column2">
 											<?php 
 											require_once'db.php';
-											$sql4 = "SELECT DISTINCT idtrainee,trainee.`name` as Name, trainer.`name` as Trainer FROM trainee INNER JOIN class ON class.idclass=class.idclass INNER JOIN trainer ON class.idclass=class.idclass WHERE idtrainee =".$idtrainee;
+											$sql4 = "SELECT DISTINCT idtrainee,trainee.`name` as Name, staff.`name` as staff FROM trainee INNER JOIN staff ON trainee.idstaff=staff.idstaff WHERE idtrainee =".$idtrainee;
 											$result4 = $conn->query($sql4);
 											if ($result4->num_rows > 0) {
 												while($row4 = $result4->fetch_assoc()) {
 													?>
-													<span><?php echo $row4["Trainer"]?><br><br>  </span>
+													<span><?php echo $row4["staff"]?><br><br>  </span>
 													<?php
 												}
 											}
