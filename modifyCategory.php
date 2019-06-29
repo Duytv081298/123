@@ -38,10 +38,11 @@ $idstaff = $_SESSION['idstaff'];
 						<thead>
 							<tr style="background: #36304a;">
 								<td colspan="4" >
-
 									<div class="container-3">
-										<span class="icon"><i class="fa fa-search"></i></span>
-										<input type="search" id="search" placeholder="Search..." />
+										<form class="example" action="searchCourse.php" method="get">
+											<span class="icon"><i class="fa fa-search"></i></span>
+											<input type="search" id="search" placeholder="Search..." name="search">
+										</form>
 									</div>
 								</td>
 								<th colspan="2" >
@@ -101,7 +102,7 @@ $idstaff = $_SESSION['idstaff'];
 										</td>
 										<td class="column5"><a href="updateCategory.php?updateCategory=<?php echo $row["idcategory"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
-											<a class="btn btn-default" href="modifyCategory.php?deletecategory=<?php echo $row["idcategory"]?>">
+											<a class="btn btn-default" href="modifyCategory.php?deletecategory=<?php echo $row["idcategory"]?>" onclick="return confirmDelete(this);">
 												<i class="fa fa-trash-o fa-lg"></i> Delete</a>
 
 											</td>
@@ -117,7 +118,14 @@ $idstaff = $_SESSION['idstaff'];
 				</div>
 			</div>
 		</div>
-
+		<script>
+			function confirmDelete(link) {
+				if (confirm("Are you sure?")) {
+					doAjax(link.href, "POST"); 
+				}
+				return false;
+			}
+		</script>
 
 	</body>
 	</html>

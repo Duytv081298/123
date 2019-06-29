@@ -10,7 +10,7 @@ $idstaff = $_SESSION['idstaff'];
 <body>
   <div class="content" style="padding: 50px 200px 50px 200px">
 
-<form action="add.php" style="border:1px solid #ccc" method="POST" enctype="multipart/form-data">
+<form action="add.php" style="border:1px solid #ccc" method="GET" enctype="multipart/form-data">
   <div class="container">
     <h1>Add Category</h1>
     <p>Please fill in this form to add Category.</p>

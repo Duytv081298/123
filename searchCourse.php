@@ -1,6 +1,6 @@
 <?php
 session_start();
-$idadmin = $_SESSION['idadmin'];
+$idstaff = $_SESSION['idstaff'];
 ?>
 
 <!DOCTYPE html>
@@ -18,15 +18,15 @@ $idadmin = $_SESSION['idadmin'];
 </head>
 <body>
 	<?php 
-	if(isset($_GET['deletestaff']))
+	if(isset($_GET['deletecourse']))
 	{
 		require_once'db.php';
-		$idstaff = $_GET['deletestaff'];
-		$sql ="DELETE FROM staff WHERE idstaff ='". (int)$idstaff ."'";
+		$idcourse = $_GET['deletecourse'];
+		$sql ="DELETE FROM course WHERE idcourse ='". (int)$idcourse ."'";
 		$result = $conn-> query($sql);
-		Header( "Location: adminModifyStaff.php" );
-	} 
-	?>  
+		Header( "Location: modifyCourse.php" );
+	}
+	?> 
 	<div class="limiter">
 		<div class="container-table100">
 			<div class="wrap-table100">
@@ -41,23 +41,12 @@ $idadmin = $_SESSION['idadmin'];
 										<input type="search" id="search" placeholder="Search..." />
 									</div>
 								</td>
-								<th colspan="1" >
-									<div style="  text-align: center;" >
-										<button type="button" style="width: 91px !important;height: 34px !important;" class="btn btn-default"  >
-											<?php
-											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-											echo "<a href='admin.php'>Go Back</a>"; 
-											?>
-										</button>
-									</div>
-								</th>
-
-								<th colspan="1" >
+								<th colspan="2" >
 									<div style="  text-align: center;" >
 										<button type="button" class="btn btn-default" >
 											<?php
 											$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-											echo "<a href='addstaffadmin.php'>Add</a>"; 
+											echo "<a href='TrainingStaff.php'>Go Back</a>"; 
 											?>
 										</button>
 									</div>
@@ -68,10 +57,10 @@ $idadmin = $_SESSION['idadmin'];
 								</th>
 							</tr>
 							<tr class="table100-head">
-								<th class="column1">ID Staff</th>
-								<th class="column2">Staff's Name</th>
-								<th class="column3">User Name</th>
-								<th class="column4">Password</th>
+								<th class="column1">ID Course</th>
+								<th class="column2">Course's Name</th>
+								<th class="column3">Course's Description</th>
+								<th class="column4">Topic</th>
 								<th class="column5">Update</th>
 								<th class="column6">Delete</th>
 								
@@ -80,22 +69,44 @@ $idadmin = $_SESSION['idadmin'];
 						<tbody>
 							<?php 
 							require_once'db.php';
-							$sql = "SELECT * FROM staff ";
-							$result = $conn->query($sql);
-							if ($result->num_rows > 0) {
+							$sql = "SELECT * FROM `course` WHERE name LIKE  '%".$_GET['search']."%'";
+							$result = $conn-> query($sql);
+							$row = $result->fetch_assoc();
+							$idcourse =  $row["idcourse"];
+							$sql1 = "SELECT * FROM course  WHERE idcourse ".$idcourse;
+							$result1 = $conn->query($sql);
+							if ($result1->num_rows > 0) {
 							    // output data of each row
-								while($row = $result->fetch_assoc()) {
-									$_SESSION['idstaff'] = $row['idstaff'];
-									$idstaff = $_SESSION['idstaff'];
+								while($row1 = $result1->fetch_assoc()) {
+									$_SESSION['idcourse'] = $row1['idcourse'];
 									?>
 									<tr>
-										<td class="column1"><?php echo $row["idstaff"]?></td>
+										<td class="column1"><?php echo $row["idcourse"]?></td>
 										<td class="column2"><?php echo $row["name"]?></td>
-										<td class="column3"><?php echo $row["user"]?></td>
-										<td class="column4"><?php echo $row["pass"]?></td>
-										<td class="column5"><a href="updateStaffAdmin.php?adminUpdateStaff=<?php echo $row["idstaff"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
+										<td class="column3"><?php echo $row["description"]?></td>
+										<td class="column4">
+
+											<?php 
+											require_once'db.php';
+
+											$sql1 = "SELECT topic.name FROM topic INNER JOIN course ON topic.idcourse=course.idcourse where course.idcourse =".$idcourse;
+
+											$result1 = $conn->query($sql1);
+											if ($result1->num_rows > 0) {
+							    // output data of each row
+												while($row1 = $result1->fetch_assoc()) {
+													?>
+													<span><?php echo $row1["name"]?></span>
+													<?php
+												}
+											}
+											?>
+
+
+										</td>
+										<td class="column5"><a href="updateCourse.php?updateCourse=<?php echo $row["idcourse"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
-											<a class="btn btn-default" href="adminModifyStaff.php?deletestaff=<?php echo $row["idstaff"]?>"onclick="return confirmDelete(this);">
+											<a class="btn btn-default" href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>">
   											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
 											
 										</td>
@@ -108,23 +119,12 @@ $idadmin = $_SESSION['idadmin'];
 							?>
 
 						</tbody>
-						<tr>
-							<td></td>
-							<td colspan="7" style="color: red">Type of Work: 1. Internal 2.Extenal</td>
-						</tr>
 					</table>
 				</div>
 			</div>
 		</div>
 	</div>
-<script>
-				function confirmDelete(link) {
-					if (confirm("Are you sure?")) {
-						doAjax(link.href, "POST"); 
-					}
-					return false;
-				}
-			</script>
+
 
 </body>
 </html>

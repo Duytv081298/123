@@ -119,5 +119,13 @@ elseif (isset($_POST['updateStaffAdmin'])) {
     $sql = "UPDATE `admin` SET `idadmin`= '$idadmin',`user`='$user',`pass`= '$pass',`name`='$name'WHERE `idadmin`= $idadmin";
     mysqli_query($db, $sql);
     Header( "Location: admin.php" );
+}elseif (isset($_POST['updateTrainerProfile'])) {
+    $idtrainer = $_SESSION['idtrainer'];
+        $user =  $_POST["user"];
+        $pass =  $_POST["pass"];
+        $name =  $_POST["name"];
+    $sql = "UPDATE `trainer` SET `idtrainer`= '$idtrainer',`user`='$user',`pass`= '$pass',`name`='$name'WHERE `idtrainer`= $idtrainer";
+    mysqli_query($db, $sql);
+    Header( "Location: TrainerStaff.php" );
 }
 ?>

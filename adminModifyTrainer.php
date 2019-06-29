@@ -97,29 +97,36 @@ $idadmin = $_SESSION['idadmin'];
 										<td class="column4"><?php echo $row["status"]?></td>
 										<td class="column5"><a href="updateTrainerAdmin.php?adminUpdateTrainer=<?php echo $row["idtrainer"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
-											<a class="btn btn-default" href="adminModifyTrainer.php?deletetrainer=<?php echo $row["idtrainer"]?>">
-  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
-											
-										</td>
+											<a class="btn btn-default" href="adminModifyTrainer.php?deletetrainer=<?php echo $row["idtrainer"]?>"onclick="return confirmDelete(this);">
+												<i class="fa fa-trash-o fa-lg"></i> Delete</a>
+												
+											</td>
 
-									</tr>
+										</tr>
 
-									<?php
+										<?php
+									}
 								}
-							}
-							?>
+								?>
 
-						</tbody>
-						<tr>
-							<td></td>
-							<td colspan="7" style="color: red">Type of Work: 1. Internal 2.Extenal</td>
-						</tr>
-					</table>
+							</tbody>
+							<tr>
+								<td></td>
+								<td colspan="7" style="color: red">Type of Work: 1. Internal 2.Extenal</td>
+							</tr>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<script>
+			function confirmDelete(link) {
+				if (confirm("Are you sure?")) {
+					doAjax(link.href, "POST"); 
+				}
+				return false;
+			}
+		</script>
 
-
-</body>
-</html>
+	</body>
+	</html>

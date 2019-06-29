@@ -37,8 +37,8 @@ $idstaff = $_SESSION['idstaff'];
 
 									<div class="container-3">
 										<form class="example" action="searchTopic.php" method="get">
-											<span class="icon"><i class="fa fa-search"></i></span>
-											<input type="search" id="search" placeholder="Search..." name="search">
+										<span class="icon"><i class="fa fa-search"></i></span>
+										<input type="search" id="search" placeholder="Search..." name="search">
 										</form>
 									</div>
 								</td>
@@ -69,43 +69,36 @@ $idstaff = $_SESSION['idstaff'];
 						<tbody>
 							<?php 
 							require_once'db.php';
-							$sql = "SELECT idtopic, topic.`name` as TopicName, topic.`description`, topic.`idcourse`, course.`name` as CourseName from topic INNER JOIN course ON topic.idcourse=course.idcourse ";
-							$result = $conn->query($sql);
-							if ($result->num_rows > 0) {
-								while($row = $result->fetch_assoc()) {
-									$idtopic = $row['idtopic'];
+							$sql = "SELECT * FROM `topic` WHERE name LIKE  '%".$_GET['search']."%'";
+							$result = $conn-> query($sql);
+							$row = $result->fetch_assoc();
+							$idtopic =  $row["idtopic"];
+
+							$sql1 = "SELECT idtopic, topic.`name` as TopicName, topic.`description`, topic.`idcourse`, course.`name` as CourseName from topic INNER JOIN course ON topic.idcourse=course.idcourse WHERE idtopic = ".$idtopic;
+							$result1 = $conn->query($sql1);
+							if ($result1->num_rows > 0) {
+								while($row1 = $result1->fetch_assoc()) {
 									?>
 									<tr>
-										<td class="column1"><?php echo $row["idtopic"]?></td>
-										<td class="column2"><?php echo $row["TopicName"]?></td>
-										<td class="column3"><?php echo $row["description"]?></td>
-										<td class="column4"><?php echo $row["CourseName"]?>
+										<td class="column1"><?php echo $row1["idtopic"]?></td>
+										<td class="column2"><?php echo $row1["TopicName"]?></td>
+										<td class="column3"><?php echo $row1["description"]?></td>
+										<td class="column4"><?php echo $row1["CourseName"]?>
 										<td class="column5"><a href="updateTopic.php?updateTopic=<?php echo $row["idtopic"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
-											<a class="btn btn-default" href="modifyTopic.php?deletetopic=<?php echo $row["idtopic"]?>" onclick="return confirmDelete(this);">
-												<i class="fa fa-trash-o fa-lg"></i> Delete</a>
-												
-											</td>
-
-										</tr>
-
-										<?php
-									}
+											<a class="btn btn-default" href="modifyTopic.php?deletetopic=<?php echo $row["idtopic"]?>"> 
+  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
+										</td>
+									</tr>
+									<?php
 								}
-								?>
-							</tbody>
-						</table>
-					</div>
+							}
+							?>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
-		<script>
-			function confirmDelete(link) {
-				if (confirm("Are you sure?")) {
-					doAjax(link.href, "POST"); 
-				}
-				return false;
-			}
-		</script>
-	</body>
-	</html>
+	</div>
+</body>
+</html>

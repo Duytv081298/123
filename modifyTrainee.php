@@ -36,6 +36,8 @@
 										<span class="icon"><i class="fa fa-search"></i></span>
 										<input type="search" id="search" placeholder="Search..." />
 									</div>
+
+									
 								</td>
 								<th colspan="3" >
 									<div style="  text-align: center;" >
@@ -144,8 +146,7 @@
 										</td>
 										<td class="column5"><a href="updateTrainee.php?updateTrainee=<?php echo $row["idtrainee"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
-											<a class="btn btn-default" href="modifyTrainee.php?deletetrainee=<?php echo $row["idtrainee"]?>"> 
-  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
+											<a class="btn btn-default" href="modifyTrainee.php?deletetrainee=<?php echo $row["idtrainee"]?>"onclick="return confirmDelete(this);">  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
 											
 										</td>
 
@@ -162,7 +163,14 @@
 			</div>
 		</div>
 	</div>
-
+	<script>
+		function confirmDelete(link) {
+			if (confirm("Are you sure?")) {
+				doAjax(link.href, "POST"); 
+			}
+			return false;
+		}
+	</script>
 
 </body>
 </html>

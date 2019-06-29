@@ -29,15 +29,15 @@ $idadmin = $_SESSION['idadmin'];
         <br/><br/>
 
         <label for="idadmin"><b>ID Admin </b></label>
-        <input type="text" name="idadmin" required value="<?=$idadmin;?>" disabled> </input>
+        <input type="text" name="idadmin" required value="<?=$idadmin;?>" readonly="true"></input>
 
         <br/><br/>
         <label for="status"><b>Enter Trainer's Status</b></label><br/>
-        <input type="radio" name="status" value="male"> Internal<br>
-        <input type="radio" name="status" value="female"> External<br>
+        <input type="radio" name="status" value="1"> Internal<br>
+        <input type="radio" name="status" value="0"> External<br>
 
         <div class="clearfix">
-          <button type="submit" class="addCourse" name="uploadtraineradmin">Add Trainer</button>
+          <button type="submit" class="addTrainerAdmin" name="uploadtraineradmin">Add Trainer</button>
         </div>
       </div>
     </form>

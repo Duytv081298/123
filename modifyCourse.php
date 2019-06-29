@@ -21,6 +21,8 @@ $idstaff = $_SESSION['idstaff'];
 	if(isset($_GET['deletecourse']))
 	{
 		require_once'db.php';
+		$mess = "Error, ID existed";
+		echo "<script type='text/javascript'>alert('$mess'); window.history.back();</script>";
 		$idcourse = $_GET['deletecourse'];
 		$sql ="DELETE FROM course WHERE idcourse ='". (int)$idcourse ."'";
 		$result = $conn-> query($sql);
@@ -37,8 +39,10 @@ $idstaff = $_SESSION['idstaff'];
 								<td colspan="4" >
 
 									<div class="container-3">
-										<span class="icon"><i class="fa fa-search"></i></span>
-										<input type="search" id="search" placeholder="Search..." />
+										<form class="example" action="searchCourse.php" method="get">
+											<span class="icon"><i class="fa fa-search"></i></span>
+											<input type="search" id="search" placeholder="Search..." name="search">
+										</form>
 									</div>
 								</td>
 								<th colspan="2" >
@@ -63,7 +67,6 @@ $idstaff = $_SESSION['idstaff'];
 								<th class="column4">Topic</th>
 								<th class="column5">Update</th>
 								<th class="column6">Delete</th>
-								
 							</tr>
 						</thead>
 						<tbody>
@@ -82,15 +85,12 @@ $idstaff = $_SESSION['idstaff'];
 										<td class="column2"><?php echo $row["name"]?></td>
 										<td class="column3"><?php echo $row["description"]?></td>
 										<td class="column4">
-
 											<?php 
 											require_once'db.php';
-
 											$sql1 = "SELECT topic.name FROM topic INNER JOIN course ON topic.idcourse=course.idcourse where course.idcourse =".$idcourse;
 
 											$result1 = $conn->query($sql1);
 											if ($result1->num_rows > 0) {
-							    // output data of each row
 												while($row1 = $result1->fetch_assoc()) {
 													?>
 													<span><?php echo $row1["name"]?></span>
@@ -98,30 +98,31 @@ $idstaff = $_SESSION['idstaff'];
 												}
 											}
 											?>
-
-
 										</td>
 										<td class="column5"><a href="updateCourse.php?updateCourse=<?php echo $row["idcourse"]?>"><button type="button" class="btn btn-default" >Update</button></a></td>
 										<td class="column6">
-											<a class="btn btn-default" href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>">
-  											<i class="fa fa-trash-o fa-lg"></i> Delete</a>
-											
-										</td>
-
-									</tr>
-
-									<?php
+											<a class="btn btn-default" href="modifyCourse.php?deletecourse=<?php echo $row["idcourse"]?>" onclick="return confirmDelete(this);">
+												<i class="fa fa-trash-o fa-lg"></i> Delete</a>
+											</td>
+										</tr>
+										<?php
+									}
 								}
-							}
-							?>
-
-						</tbody>
-					</table>
+								?>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
+		<script>
+			function confirmDelete(link) {
+				if (confirm("Are you sure?")) {
+					doAjax(link.href, "POST"); 
+				}
+				return false;
+			}
+		</script>
 
-
-</body>
-</html>
+	</body>
+	</html>

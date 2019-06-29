@@ -7,13 +7,12 @@ session_start();
 
 
   $db = mysqli_connect("localhost", "root", "", "website");
-  if (isset($_POST['uploadcategory'])) {
+  if (isset($_GET['uploadcategory'])) {
     $idstaff = $_SESSION['idstaff'];
-    $name = mysqli_real_escape_string($db, $_POST['name']);
-    $description = mysqli_real_escape_string($db, $_POST['description']);
+    $name = mysqli_real_escape_string($db, $_GET['name']);
+    $description = mysqli_real_escape_string($db, $_GET['description']);
     $sql = "INSERT INTO  category (name, description, idstaff) VALUES ('$name', '$description', '$idstaff')";
     mysqli_query($db, $sql);
-    Header( "Location: modifyCategory.php" );
 }
 
 // add Course 
@@ -75,9 +74,10 @@ elseif (isset($_POST['uploadtrainer'])) {
   $user = mysqli_real_escape_string($db, $_POST['user']);
   $pass = mysqli_real_escape_string($db, $_POST['pass']);
   $status = mysqli_real_escape_string($db, $_POST['status']);
-  $sql = "INSERT INTO  trainer (name, user, pass, status,idadmin) VALUES ('$name', '$user', '$pass', '$status', '$idadmin')";
-  mysqli_query($db, $sql);
+  $sql = "INSERT INTO trainer(user, pass, name, idadmin,status) VALUES ( '$user', '$pass','$name', '$idadmin', '$status')";
   Header( "Location: adminModifyTrainer.php" );
+
+  mysqli_query($db, $sql);
   }
 // Admin add Staff 
   elseif (isset($_POST['uploadstaffadmin'])) {
