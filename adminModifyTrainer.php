@@ -121,7 +121,7 @@ $idadmin = $_SESSION['idadmin'];
 		</div>
 		<script>
 			function confirmDelete(link) {
-				if (confirm("Are you sure?")) {
+				if (confirm("Do you want to delete the account?")) {
 					doAjax(link.href, "POST"); 
 				}
 				return false;
